@@ -69,6 +69,13 @@ CG_INLINE CGPoint ScreenCenter(){
 - (NSMutableArray*)allViewsWithAccessibilityLabel:(NSString*)label;
 @end
 
+#pragma mark - UIScrollView+Utls
+
+@interface UIScrollView (Utils)
+- (void)addContentWidth:(CGFloat)width;
+- (void)addContentHeight:(CGFloat)height;
+@end
+
 #pragma mark - UILabel+Utils
 
 @interface UILabel (Utils)
