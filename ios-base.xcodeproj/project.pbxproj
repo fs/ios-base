@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09648FEE18B2100C00DAE015 /* UIBarButtonItem+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 09648FED18B2100C00DAE015 /* UIBarButtonItem+Extensions.m */; };
 		09BEB7B518AE0AE200FAE462 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09BEB7B418AE0AE200FAE462 /* Foundation.framework */; };
 		09BEB7B718AE0AE200FAE462 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09BEB7B618AE0AE200FAE462 /* CoreGraphics.framework */; };
 		09BEB7B918AE0AE200FAE462 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09BEB7B818AE0AE200FAE462 /* UIKit.framework */; };
@@ -45,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09648FEC18B2100C00DAE015 /* UIBarButtonItem+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extensions.h"; sourceTree = "<group>"; };
+		09648FED18B2100C00DAE015 /* UIBarButtonItem+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extensions.m"; sourceTree = "<group>"; };
 		09BEB7B118AE0AE200FAE462 /* ios-base.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-base.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09BEB7B418AE0AE200FAE462 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		09BEB7B618AE0AE200FAE462 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -212,15 +215,17 @@
 		09BEB80A18AE40B400FAE462 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				09BEB81118AE41EB00FAE462 /* FSHelpers.h */,
+				09BEB81218AE41EB00FAE462 /* FSHelpers.m */,
 				09BEB81518AE41EB00FAE462 /* Macros.h */,
 				09BEB81818AE41EB00FAE462 /* NSDate+Extensions.h */,
 				09BEB81918AE41EB00FAE462 /* NSDate+Extensions.m */,
-				09BEB81118AE41EB00FAE462 /* FSHelpers.h */,
-				09BEB81218AE41EB00FAE462 /* FSHelpers.m */,
-				09BEB82918AE41EB00FAE462 /* UIImage+Utils.h */,
-				09BEB82A18AE41EB00FAE462 /* UIImage+Utils.m */,
+				09648FEC18B2100C00DAE015 /* UIBarButtonItem+Extensions.h */,
+				09648FED18B2100C00DAE015 /* UIBarButtonItem+Extensions.m */,
 				09BEB82D18AE41EB00FAE462 /* UIImage+ImageEffects.h */,
 				09BEB82E18AE41EB00FAE462 /* UIImage+ImageEffects.m */,
+				09BEB82918AE41EB00FAE462 /* UIImage+Utils.h */,
+				09BEB82A18AE41EB00FAE462 /* UIImage+Utils.m */,
 				09BEB83118AE41EB00FAE462 /* UIImageView+Utils.h */,
 				09BEB83218AE41EB00FAE462 /* UIImageView+Utils.m */,
 			);
@@ -416,6 +421,7 @@
 				09BEB85218AE581E00FAE462 /* APIManager.m in Sources */,
 				09BEB84618AE41EB00FAE462 /* UIImage+Utils.m in Sources */,
 				09BEB83A18AE41EB00FAE462 /* FSHelpers.m in Sources */,
+				09648FEE18B2100C00DAE015 /* UIBarButtonItem+Extensions.m in Sources */,
 				09BEB85818AE62A500FAE462 /* IBObject.m in Sources */,
 				09BEB7C518AE0AE200FAE462 /* AppDelegate.m in Sources */,
 				09BEB84818AE41EB00FAE462 /* UIImage+ImageEffects.m in Sources */,
