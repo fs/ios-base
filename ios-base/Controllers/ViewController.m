@@ -25,6 +25,11 @@
         NSString *dateString = [currentDate formattedTime];
         [UIAlertView bk_showAlertViewWithTitle:@"current date" message:dateString cancelButtonTitle:@"OK" otherButtonTitles:nil handler:nil];
     }];
+    
+    dispatch_after_short(0.2, ^{
+        NSLog(@"Hello world");
+    });
+    
 }
 
 - (void)didReceiveMemoryWarning

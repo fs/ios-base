@@ -10,23 +10,9 @@
 #import "UIImageView+Utils.h"
 
 
-CG_INLINE CGRect CGRectMakeIntegral(CGFloat x, CGFloat y, CGFloat width, CGFloat height){
-    CGRect rect;
-    rect.origin.x = x; rect.origin.y = y;
-    rect.size.width = width; rect.size.height = height;
-    return CGRectIntegral(rect);
-}
-CG_INLINE CGPoint ScreenCenter(){
-    if ([UIApplication sharedApplication].statusBarOrientation==UIInterfaceOrientationLandscapeLeft)
-        return CGPointMake(384, 512);
-    if ([UIApplication sharedApplication].statusBarOrientation==UIInterfaceOrientationLandscapeRight)
-        return CGPointMake(384, 512);
-    if ([UIApplication sharedApplication].statusBarOrientation==UIInterfaceOrientationPortrait)
-        return CGPointMake(384, 512);
-    if ([UIApplication sharedApplication].statusBarOrientation==UIInterfaceOrientationPortraitUpsideDown)
-        return CGPointMake(384, 512);
-    return CGPointMake(384, 512);
-}
+static inline void dispatch_after_short(CGFloat delay, dispatch_block_t block){
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), block);
+};
 
 #pragma mark - UIView+Utils
 
