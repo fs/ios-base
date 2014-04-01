@@ -14,6 +14,9 @@ typedef enum {
 
 @interface UIImage (Utils)
 
+//картинка из одного пикселя (1x1) указанного цвета
++ (UIImage *)imageWithColor:(UIColor *)color;
+
 //заполняет прозрачные пиксели в картинке указанным цветом
 - (UIImage *)imageFilledWithColor:(UIColor *)color;
 
