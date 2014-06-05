@@ -533,7 +533,7 @@
                                                 context:NULL];
         contentSize = CGSizeMake(size.width, ceilf(contentRect.size.height));
     } else {
-        CGSize contentSize = [self sizeWithFont:font
+        contentSize = [self sizeWithFont:font
                               constrainedToSize:CGSizeMake(size.width, MAXFLOAT)];
         contentSize = CGSizeMake(size.width, ceilf(contentSize.height));
     }
