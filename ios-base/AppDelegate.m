@@ -7,14 +7,12 @@
 //
 
 #import "AppDelegate.h"
-#import "Testflight.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    [TestFlight takeOff:kTestflightAppToken];
     return YES;
 }
 							
