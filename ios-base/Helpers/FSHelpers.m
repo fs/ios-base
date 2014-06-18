@@ -483,6 +483,18 @@
     return result;
 }
 
+- (NSArray *)shuffle
+{
+    NSMutableArray *array = [NSMutableArray arrayWithArray:self];
+    NSUInteger count = [array count];
+    for (NSUInteger i = 0; i < count; ++i) {
+        NSInteger remainingCount = count - i;
+        NSInteger exchangeIndex = i + arc4random_uniform(remainingCount);
+        [array exchangeObjectAtIndex:i withObjectAtIndex:exchangeIndex];
+    }
+    return [NSArray arrayWithArray:array];
+}
+
 @end
 
 #pragma mark - NSString+Utils
