@@ -109,6 +109,7 @@ static inline void dispatch_after_short(CGFloat delay, dispatch_block_t block){
 @interface NSArray (WRK)
 - (id) objectAtIndexOrNil:(int)index;
 - (NSArray *)containNotObjects:(NSArray *)array;
+- (NSArray *)shuffle;
 
 @end
 
