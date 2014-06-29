@@ -6,16 +6,13 @@ xcode_scheme: ios-base-Production
 rvm: 1.9.3
 
 before_install:
-    - brew update
-    - brew upgrade xctool
     - export LANG=en_US.UTF-8
     - sudo gem install cocoapods --no-document
 
 install: pod install
 
 script:
-#    - xctool test -workspace xcode_workspace -scheme xcode_scheme -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
-    - xcodebuild -workspace xcode_workspace -scheme xcode_scheme -destination 'platform=iOS Simulator,name=iPhone Retina (4-inch),OS=7.1' test
+    - xcodebuild -workspace ios-base.xcworkspace -scheme ios-base-Production -destination 'platform=iOS Simulator,name=iPhone Retina (4-inch),OS=7.1' test
 
 branches:
     only:
