@@ -9,8 +9,9 @@
 #import "APIManager.h"
 #import "AFNetworking.h"
 
+#warning checkout code and remove API_KEY and rename BASE_URL for staging and production
 //Get info about this API on http://timezonedb.com/api
-#define BASE_URL @"http://api.timezonedb.com/"
+#define BASE_URL [[[NSBundle mainBundle] bundleIdentifier] hasSuffix:@"staging"] ? @"http://staging/" : @"http://api.timezonedb.com/"
 #define API_KEY @"PF85Q4OP7VRG"
 
 @implementation APIManager
