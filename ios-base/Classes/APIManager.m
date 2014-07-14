@@ -32,7 +32,7 @@
                               @"key": API_KEY,
                               @"format": @"json" };
     [manager GET:fullURL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSTimeInterval timeInterval = [[responseObject objectForKeyOrNil:@"timestamp"] doubleValue];
+        NSTimeInterval timeInterval = [[responseObject objectForKeyExcludeNSNull:@"timestamp"] doubleValue];
         NSDate *date = [NSDate dateWithTimeIntervalSince1970:timeInterval];
         BLOCK_SAFE_RUN(block, date);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

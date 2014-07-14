@@ -7,7 +7,7 @@
 #import <Availability.h>
 
 #ifndef __IPHONE_5_0
-#warning "This project uses features only available in iOS SDK 5.0 and later."
+#warning "This project uses features only available in iOS SDK 6.0 and later."
 #endif
 
 #ifdef __OBJC__
@@ -15,4 +15,6 @@
     #import <Foundation/Foundation.h>
     #import "Constants.h"
     #import "FSHelpers.h"
+    #import <BlocksKit+UIKit.h>
+    #import <BlocksKit.h>
 #endif

@@ -1,3 +1,4 @@
+
 #import <UIKit/UIKit.h>
 #import "Macros.h"
 #import "NSDate+Extensions.h"
@@ -17,108 +18,60 @@ static inline void dispatch_after_short(CGFloat delay, dispatch_block_t block){
 #pragma mark - UIView+Utils
 
 @interface UIView (Utils)
-- (CGFloat)width;
-- (CGFloat)height;
-- (CGFloat)rightX;
-- (CGFloat)bottomY;
 
-- (void)setHeight:(CGFloat)height;
-- (void)setWidth:(CGFloat)width;
-- (void)setOriginX:(CGFloat)originX;
-- (void)setOriginY:(CGFloat)originY;
-- (void)moveTo:(CGPoint)position;
+@property (nonatomic) CGSize  size;
+@property (nonatomic) CGFloat width;
+@property (nonatomic) CGFloat height;
+
+@property (nonatomic) CGPoint origin;
+@property (nonatomic) CGFloat x;
+@property (nonatomic) CGFloat y;
+
+// works only when superview has been set
+@property (nonatomic) CGFloat rightMarign;
+@property (nonatomic) CGFloat bottomMarign;
 
 - (void)removeAllSubviews;
+- (void)addShineGradient;
 
-- (void) addBottomLine;
-- (void) addTopLine;
-
-// negative value to remove height/width
-- (void)addHeight:(CGFloat)height;
-- (void)addWidth:(CGFloat)width;
-// negative value to move up
--(void) addOriginX:(CGFloat)originX;
--(void) addOriginY:(CGFloat)originY;
-- (void)setOrigin:(CGPoint)position ;
-// Layout views
-- (CGSize)prefferedSize;
-
-- (void)layoutAllSubviewsVertically;
-- (void)layoutAllSubviewsVerticallyFromBottom;
-
--(void) addGradient;
-- (BOOL)findAndResignFirstResponder;
-
--(void) resizeWithLabel:(UILabel*)label;
-- (NSMutableArray*) allSubViews;
-- (NSMutableArray*)allLabelsButtonsAndTextFields;
-- (NSMutableArray*)allViewsWithAccessibilityLabel:(NSString*)label;
 @end
 
 #pragma mark - UIScrollView+Utls
 
 @interface UIScrollView (Utils)
-- (void)addContentWidth:(CGFloat)width;
-- (void)addContentHeight:(CGFloat)height;
+@property (nonatomic) CGFloat contentWidth;
+@property (nonatomic) CGFloat contentHeight;
 @end
 
 #pragma mark - UILabel+Utils
 
 @interface UILabel (Utils)
-+ (UILabel*)labelWithText:(NSString*) text;
-- (UILabel*)makeCopyWithFontSize:(CGFloat) fontSize;
-
-- (CGSize)prefferedSize;
-- (CGFloat)preferredWidth;
-- (CGFloat)preferredHeight;
-- (void)stretchToPrefferedWidth;
-- (void)stretchToPrefferedHeight;
-
--(void) resizeToFit;
--(void) resizeVerticallyToFit;
--(void) setTextWithAutoFit:(NSString*) text;
--(void) highlightTextWithRange:(NSRange)range;
+- (UILabel *)deepCopy;
 @end
 
 #pragma mark - NSDictionary+Utils
 
 @interface NSDictionary (Utils)
-
-- (id)objectForKeyOrDefault:(id)aKey aDefault:(id)aDefault;
-- (id)objectForKeyOrEmptyString:(id)aKey;
-- (id)objectForKeyOrNil:(id)aKey;
-- (NSInteger)intForKeyOrDefault:(id)aKey aDefault:(NSInteger)aDefault;
-- (BOOL)boolForKeyOrDefault:(id)aKey aDefault:(BOOL)aDefault;
-- (id)objectForInt:(NSInteger)anInt;
+- (id)objectForKeyExcludeNSNull:(id)aKey;
 - (NSString *)toCoreDataRequestString;
 - (NSString *)toHttpRequestString;
-
-@end
-
-#pragma mark - NSMutableDictionary+Utils
-
-@interface NSMutableDictionary (Utils)
-- (void)setArrayOrEmptyString:(NSArray*)array forKey:(id)aKey;
-- (void)setObjectIfNotNil:(id)anObject forKey:(id)aKey;
-- (void)trimValues;
-
 @end
 
 #pragma mark - NSArray+Utils
 
-@interface NSArray (WRK)
-- (id) objectAtIndexOrNil:(int)index;
+@interface NSArray (Utils)
+- (id)objectAtIndexOrNil:(NSUInteger)index;
 - (NSArray *)containNotObjects:(NSArray *)array;
 - (NSArray *)shuffle;
-
 @end
 
 #pragma mark - NSString+Utils
 
 @interface NSString (Utils)
+- (NSURL*)toURL;
 - (NSString *)URLEncodedString;
 - (NSString *)URLDecodedString;
-- (NSString *)LightURLEncodeString;
+- (NSString *)lightURLEncodeString;
 + (BOOL)emailValidate:(NSString *)email;
 - (CGSize)sizeForStringWithFont:(UIFont *)font constrainedToSize:(CGSize)size;
 @end
@@ -126,9 +79,7 @@ static inline void dispatch_after_short(CGFloat delay, dispatch_block_t block){
 #pragma mark - NSObject+Utils
 
 @interface NSObject (Utils)
-
 - (BOOL)isEmpty;
-
 @end
 
 #pragma mark - UITableView+Utils
@@ -136,8 +87,3 @@ static inline void dispatch_after_short(CGFloat delay, dispatch_block_t block){
 @interface UITableView (Utils)
 - (void)deselectSelectedRow;
 @end
-
-
-
-
-

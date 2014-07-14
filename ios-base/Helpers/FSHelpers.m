@@ -1,30 +1,24 @@
+
 #import "FSHelpers.h"
 #import <QuartzCore/QuartzCore.h>
 
 #pragma mark - UIView+Utils
 
+@interface UIGradientView : UIView
+@property (nonatomic,readonly,retain) CAGradientLayer  *layer;
+@end
+
+@implementation UIGradientView
++ (Class)layerClass {
+    return [CAGradientLayer class];
+}
+@end
+
 @implementation UIView (Utils)
 
+#pragma mark - Frame Setters/Getters
 - (CGFloat)width {
     return self.frame.size.width;
-}
-
-- (CGFloat)height {
-    return self.frame.size.height;
-}
-
--(CGFloat)rightX{
-    return self.frame.origin.x + self.frame.size.width;
-}
-
--(CGFloat)bottomY{
-    return self.frame.origin.y + self.frame.size.height;
-}
-
-- (void)setHeight:(CGFloat)height {
-    CGRect frame = self.frame;
-    frame.size.height = height;
-    [self setFrame:frame];
 }
 
 - (void)setWidth:(CGFloat)width {
@@ -33,67 +27,54 @@
     [self setFrame:frame];
 }
 
--(void) setOriginX:(CGFloat)originX{
+- (CGFloat)height {
+    return self.frame.size.height;
+}
+
+- (void)setHeight:(CGFloat)height {
     CGRect frame = self.frame;
-    frame.origin.x = originX;
+    frame.size.height = height;
     [self setFrame:frame];
 }
 
--(void) setOriginY:(CGFloat)originY{
+- (CGFloat)x {
+    return self.frame.origin.x;
+}
+
+- (void)setX:(CGFloat)x {
     CGRect frame = self.frame;
-    frame.origin.y = originY;
+    frame.origin.x = x;
     [self setFrame:frame];
 }
 
-- (void)moveTo:(CGPoint)position {
+- (CGFloat)y {
+    return self.frame.origin.y;
+}
+
+- (void)setY:(CGFloat)y{
     CGRect frame = self.frame;
-    frame.origin = position;
+    frame.origin.y = y;
     [self setFrame:frame];
 }
 
-- (void)removeAllSubviews {
-    for (UIView *view in [self subviews]) {
-        [view removeFromSuperview];
-    }
+- (CGFloat)rightMarign {
+    return self.superview.bounds.size.width - CGRectGetMaxX(self.frame);
 }
 
--(void)addBottomLine{
-    CGRect frame = {{0, self.height - ONE_PIXEL}, {self.width, ONE_PIXEL}};
-    UIView *v = [[UIView alloc] initWithFrame:frame];
-    v.backgroundColor = RGB(200,200, 200);
-    [self addSubview:v];
-    //v.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
+- (void)setRightMarign:(CGFloat)rightMarign {
+    self.x = self.superview.bounds.size.width - rightMarign - self.frame.size.width;
 }
 
--(void)addTopLine{
-    CGRect frame = {{0, 0}, {self.width, ONE_PIXEL}};
-    UIView *v = [[UIView alloc] initWithFrame: frame];
-    v.backgroundColor = RGB(200,200, 200);
-    [self addSubview:v];
-    //v.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
+- (CGFloat)bottomMarign {
+    return self.superview.bounds.size.height - CGRectGetMaxY(self.frame);
 }
 
-
-- (void)addHeight:(CGFloat)height{
-    CGRect frame = self.frame;
-    frame.size.height = frame.size.height+ height;
-    [self setFrame:frame];
-}
-- (void)addWidth:(CGFloat)width {
-    CGRect frame = self.frame;
-    frame.size.width = frame.size.width + width;
-    [self setFrame:frame];
+- (void)setBottomMarign:(CGFloat)bottomMarign {
+    self.y = self.superview.bounds.size.height - bottomMarign - self.frame.size.height;
 }
 
--(void) addOriginX:(CGFloat)originX{
-    CGRect frame = self.frame;
-    frame.origin.x = frame.origin.x + originX;
-    [self setFrame:frame];
-}
--(void) addOriginY:(CGFloat)originY{
-    CGRect frame = self.frame;
-    frame.origin.y = frame.origin.y + originY;
-    [self setFrame:frame];
+- (CGPoint)origin {
+    return self.frame.origin;
 }
 
 - (void)setOrigin:(CGPoint)position {
@@ -102,118 +83,36 @@
     [self setFrame:frame];
 }
 
-- (CGSize)prefferedSize {
-    return self.frame.size;
+- (CGSize)size {
+    return self.size;
 }
 
-- (void)layoutAllSubviewsVertically {
-    CGFloat totalHeight = 0.0f;
-    for (UIView *view in self.subviews) {
-        if (![view isKindOfClass:[UIImageView class]] && !view.isHidden) {
-            CGSize prefferedSize = [view prefferedSize];
-            [view setHeight:prefferedSize.height];
-            [view setWidth:self.width];
-            [view moveTo:CGPointMake(0.0f, totalHeight)];
-            
-            totalHeight += prefferedSize.height;
-        }
-    }
-    CGFloat heightToSet = totalHeight;
-    [self setHeight:heightToSet];
+- (void)setSize:(CGSize)size {
+    CGRect frame = self.frame;
+    frame.size = size;
+    [self setFrame:frame];
 }
 
-- (void)layoutAllSubviewsVerticallyFromBottom {
-    CGFloat totalHeight = [self height];
-    for (UIView *view in self.subviews) {
-        if (!view.isHidden) {
-            CGSize prefferedSize = [view prefferedSize];
-            [view setHeight:prefferedSize.height];
-            [view setWidth:self.width];
-            
-            totalHeight -= prefferedSize.height;
-            [view moveTo:CGPointMake(0.0f, totalHeight)];
-        }
+#pragma mark -
+
+- (void)removeAllSubviews {
+    for (UIView *view in [self subviews]) {
+        [view removeFromSuperview];
     }
 }
 
--(void) addGradient{
-        
-        // Add Border
-        CALayer *layer = self.layer;
-        layer.cornerRadius = 10.0f;
-        layer.masksToBounds = YES;
-        layer.borderWidth = 1.0f;
-        layer.borderColor = [UIColor colorWithWhite:0.5f alpha:0.2f].CGColor;
-        
-        // Add Shine
-        CAGradientLayer *shineLayer = [CAGradientLayer layer];
-        shineLayer.frame = layer.bounds;
-        shineLayer.colors = [NSArray arrayWithObjects:
-                             (id)[UIColor colorWithWhite:1.0f alpha:0.4f].CGColor,
-                             (id)[UIColor colorWithWhite:1.0f alpha:0.2f].CGColor,
-                             (id)[UIColor colorWithWhite:0.75f alpha:0.2f].CGColor,
-                             (id)[UIColor colorWithWhite:0.4f alpha:0.2f].CGColor,
-                             (id)[UIColor colorWithWhite:1.0f alpha:0.4f].CGColor,
-                             nil];
-        shineLayer.locations = [NSArray arrayWithObjects:
-                                [NSNumber numberWithFloat:0.0f],
-                                [NSNumber numberWithFloat:0.5f],
-                                [NSNumber numberWithFloat:0.5f],
-                                [NSNumber numberWithFloat:0.8f],
-                                [NSNumber numberWithFloat:1.0f],
-                                nil];
-        [layer addSublayer:shineLayer];
-}
-
-- (BOOL)findAndResignFirstResponder
-{
-    if (self.isFirstResponder) {
-        [self resignFirstResponder];
-        NSLog(@"first responder was: %@",self);
-        return YES;
-    }
-    for (UIView *subView in self.subviews) {
-        if ([subView findAndResignFirstResponder])
-            return YES;
-    }
-    return NO;
-}
-
--(void) resizeWithLabel:(UILabel*)label{
-    CGSize size=  [label.text sizeWithFont:label.font constrainedToSize:CGSizeMake(300, 30)];
-    CGPoint center = self.center;
-    self.width = size.width+16;
-    self.center = center;
-}
-
-- (NSMutableArray*)allSubViews{
-    NSMutableArray *arr= [NSMutableArray array];
-    [arr addObject:self];
-    for (UIView *subview in self.subviews){
-        [arr addObjectsFromArray:(NSArray*)[subview allSubViews]];
-    }
-    return arr;
-}
-
-- (NSMutableArray*)allLabelsButtonsAndTextFields{
-    NSMutableArray *arr= [NSMutableArray array];
-    if ([self isKindOfClass:[UILabel class]] || [self isKindOfClass:[UIButton class]] || [self isKindOfClass:[UITextField class]])
-        [arr addObject:self];
-    else
-        for (UIView *subview in self.subviews)    {
-            [arr addObjectsFromArray:(NSArray*)[subview allLabelsButtonsAndTextFields]];
-        }
-    return arr;
-}
-
-- (NSMutableArray*)allViewsWithAccessibilityLabel:(NSString*)label{
-    NSMutableArray *arr= [NSMutableArray array];
-    if ([[self accessibilityLabel] isEqualToString:label])
-        [arr addObject:self];
-    for (UIView *subview in self.subviews) {
-        [arr addObjectsFromArray:(NSArray*)[subview allViewsWithAccessibilityLabel:label]];
-    }
-    return arr;
+- (void)addShineGradient{
+    UIGradientView *newSubview = [[UIGradientView alloc] initWithFrame:self.bounds];
+    newSubview.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    newSubview.layer.colors = [NSArray arrayWithObjects:
+                         (id)[UIColor colorWithWhite:1.0f alpha:0.4f].CGColor,
+                         (id)[UIColor colorWithWhite:1.0f alpha:0.2f].CGColor,
+                         (id)[UIColor colorWithWhite:0.75f alpha:0.2f].CGColor,
+                         (id)[UIColor colorWithWhite:0.4f alpha:0.2f].CGColor,
+                         (id)[UIColor colorWithWhite:1.0f alpha:0.4f].CGColor,
+                         nil];
+    newSubview.layer.locations = @[@0.0f, @0.5f, @0.5f, @0.8f, @1.0f];
+    [self addSubview:newSubview];
 }
 
 @end
@@ -221,14 +120,18 @@
 #pragma mark - UIScrollView+Utls
 
 @implementation UIScrollView (Utils)
-- (void)addContentWidth:(CGFloat)width {
-    CGSize contentSize = self.contentSize;
-    self.contentSize = CGSizeMake(contentSize.width + width, contentSize.height);
+- (CGFloat)contentWidth {
+    return self.contentSize.width;
+}
+- (void)setContentWidth:(CGFloat)contentWidth {
+    self.contentSize = CGSizeMake(contentWidth, self.contentSize.height);
 }
 
-- (void)addContentHeight:(CGFloat)height {
-    CGSize contentSize = self.contentSize;
-    self.contentSize = CGSizeMake(contentSize.width, contentSize.height + height);
+- (CGFloat)contentHeight {
+    return self.contentSize.height;
+}
+- (void)setContentHeight:(CGFloat)contentHeight {
+    self.contentSize = CGSizeMake(self.contentSize.width, contentHeight);
 }
 @end
 
@@ -236,23 +139,9 @@
 
 @implementation UILabel (Utils)
 
-+(UILabel*) labelWithText:(NSString*) text{
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
-    [label setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:20.0f]];
-    [label setBackgroundColor:[UIColor clearColor]];
-    [label setTextColor:[UIColor colorWithRed:0.25 green:0.25 blue:0.25 alpha:1.0f]];
-    [label setShadowColor:[UIColor whiteColor]];
-    [label setShadowOffset:CGSizeMake(0, 1)];
-    [label setText:text];
-    [label resizeToFit];
-    [label setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth];
-    [label setTextAlignment:NSTextAlignmentCenter];
-    return label;
-}
-
--(UILabel*) makeCopyWithFontSize:(CGFloat) fontSize{
+- (UILabel*)deepCopy {
     UILabel *label = [[UILabel alloc] init];
-    label.font = [UIFont fontWithName:self.font.familyName size:fontSize];
+    label.font = self.font;
     label.backgroundColor = self.backgroundColor;
     label.text = self.text;
     label.frame = self.frame;
@@ -263,148 +152,15 @@
     return label;
 }
 
-- (CGSize)prefferedSize {
-    return CGSizeMake(self.width, [self preferredHeight]);
-}
-
-- (CGFloat)preferredWidth {
-    CGRect frame = CGRectMake(0, 0, 0, self.frame.size.height);
-    UILabel *testLabel = [[UILabel alloc] initWithFrame:frame];
-    testLabel.text = self.text;
-    testLabel.font = self.font;
-    testLabel.textAlignment = self.textAlignment;
-    testLabel.lineBreakMode = self.lineBreakMode;
-    testLabel.numberOfLines = 0;
-    [testLabel sizeToFit];
-    CGFloat result = testLabel.frame.size.width;
-    return result;
-}
-
-- (CGFloat)preferredHeight {
-    CGRect frame = CGRectMake(0, 0, self.frame.size.width, 0);
-    UILabel *testLabel = [[UILabel alloc] initWithFrame:frame];
-    testLabel.text = self.text;
-    testLabel.font = self.font;
-    testLabel.textAlignment = self.textAlignment;
-    testLabel.lineBreakMode = self.lineBreakMode;
-    testLabel.numberOfLines = 0;
-    [testLabel sizeToFit];
-    CGFloat preferredCellHeight = testLabel.frame.size.height;
-    return preferredCellHeight;
-}
-
-- (void)stretchToPrefferedWidth {
-    CGRect frame = self.frame;
-    frame.size.width = [self preferredWidth] + 3.0f;
-    self.frame = frame;
-}
-
-- (void)stretchToPrefferedHeight {
-    CGRect frame = self.frame;
-    frame.size.height = [self preferredHeight];
-    self.frame = frame;
-}
-
--(void) resizeToFit{
-    CGSize expectedLabelSize = [self.text sizeWithFont:self.font
-                                     constrainedToSize:CGSizeMake(10000, self.frame.size.height)];
-    
-    //adjust the label the the new height.
-    CGRect newFrame = self.frame;
-    newFrame.size = expectedLabelSize;
-    newFrame.size.height = ceilf(self.frame.size.height);
-    self.frame = newFrame;
-}
-
--(void) resizeVerticallyToFit{
-    self.numberOfLines = 0;
-    CGSize expectedLabelSize = [self.text sizeWithFont:self.font
-                                     constrainedToSize:CGSizeMake(self.width, 10000)];
-    //adjust the label the the new height.
-    CGRect newFrame = self.frame;
-    newFrame.size = expectedLabelSize;
-    newFrame.size.width = ceilf(self.frame.size.width);
-    self.frame = newFrame;
-}
-
--(void) setTextWithAutoFit:(NSString*) text{
-    self.text = text;
-    CGSize expectedLabelSize = [text sizeWithFont:self.font
-                                constrainedToSize:CGSizeMake(10000, self.frame.size.height)];
-    
-    //adjust the label the the new height.
-    CGRect newFrame = self.frame;
-    newFrame.size = expectedLabelSize;
-    newFrame.size.height = self.frame.size.height;
-    self.frame = newFrame;
-    //   self.backgroundColor = [UIColor greenColor]; // for debugging
-}
-
--(void)highlightTextWithRange:(NSRange)range{
-    if ([self respondsToSelector:@selector(setAttributedText:)]){
-        
-        UIFont *boldFont = [UIFont fontWithName:@"HelveticaNeue-Bold" size:14.0f];
-        UIFont *regularFont = [UIFont fontWithName:@"HelveticaNeue" size:14.0f];
-        // Create the attributes
-        NSDictionary *attrs = [NSDictionary dictionaryWithObjectsAndKeys:
-                               regularFont, NSFontAttributeName,
-                               nil];
-        NSDictionary *attrsBold = [NSDictionary dictionaryWithObjectsAndKeys:
-                                   boldFont, NSFontAttributeName,
-                                   nil];
-        
-        // Create the attributed string (text + attributes)
-        NSMutableAttributedString *attributedText =
-        [[NSMutableAttributedString alloc] initWithString:self.text
-                                               attributes:attrs];
-        [attributedText setAttributes:attrsBold range:range];
-        
-        // Set it in our UILabel and we are done!
-        [self setAttributedText:attributedText];
-    }
-}
-
 @end
 
 #pragma mark - NSDictionary+Utils
 
 @implementation NSDictionary (Utils)
 
-- (id)objectForKeyOrDefault:(id)aKey aDefault:(id)aDefault {
+- (id)objectForKeyExcludeNSNull:(id)aKey {
     id obj = [self objectForKey:aKey];
-    return (! obj || obj == [NSNull null]) ? aDefault : obj;
-}
-
-- (id)objectForKeyOrEmptyString:(id)aKey {
-    return [self objectForKeyOrDefault:aKey aDefault:@""];
-}
-
-- (id)objectForKeyOrNil:(id)aKey {
-    return [self objectForKeyOrDefault:aKey aDefault:nil];
-}
-
-- (NSInteger)intForKeyOrDefault:(id)aKey aDefault:(NSInteger)aDefault {
-    id object = [self objectForKeyOrDefault:aKey aDefault:nil];
-    if (object) {
-        if ([object respondsToSelector:@selector(intValue)]) {
-            return [object intValue];
-        }
-    }
-    return aDefault;
-}
-
-- (BOOL)boolForKeyOrDefault:(id)aKey aDefault:(BOOL)aDefault {
-    id object = [self objectForKeyOrDefault:aKey aDefault:nil];
-    if (object) {
-        if ([object respondsToSelector:@selector(boolValue)]) {
-            return [object boolValue];
-        }
-    }
-    return aDefault;
-}
-
-- (id)objectForInt:(NSInteger)anInt {
-    return [self objectForKey:[NSNumber numberWithInteger:anInt]];
+    return ([obj isKindOfClass:[NSNull class]]) ? nil : obj;
 }
 
 - (NSString *)toHttpRequestString {
@@ -430,44 +186,12 @@
 
 @end
 
-#pragma mark - NSMutableDictionary+Utils
-
-@implementation NSMutableDictionary (Utils)
-- (void)setArrayOrEmptyString:(NSArray*)array forKey:(id)aKey{
-    if ([array isKindOfClass:[NSArray class]] && array.count>0) {
-        [self setObject:array forKey:aKey];
-    } else {
-        [self setObject:@"" forKey:aKey];
-    }
-}
-
-- (void)setObjectIfNotNil:(id)anObject forKey:(id)aKey {
-    if (anObject) {
-        [self setObject:anObject forKey:aKey];
-    }
-}
-
-- (void)trimValues {
-    NSArray *allKeys = [NSArray arrayWithArray:[self allKeys]];
-    for (id key in allKeys) {
-        id object = [self objectForKey:key];
-        if ([object isKindOfClass:[NSString class]]) {
-            NSString *value = (NSString *)object;
-            NSString *trimmedString = [value stringByTrimmingCharactersInSet:
-                                       [NSCharacterSet whitespaceAndNewlineCharacterSet]];
-            [self setObject:trimmedString forKey:key];
-        }
-    }
-}
-
-@end
-
 #pragma mark - NSArray+Utils
 
 @implementation NSArray (Utils)
 
-- (id) objectAtIndexOrNil:(int)index{
-    if (index<self.count && index>=0)
+- (id)objectAtIndexOrNil:(NSUInteger)index{
+    if (index < self.count)
         return [self objectAtIndex:index];
     return nil;
 }
@@ -501,6 +225,10 @@
 
 @implementation NSString (Utils)
 
+- (NSURL*)toURL {
+    return [NSURL URLWithString:self];
+}
+
 - (NSString *)URLEncodedString {
 	NSString * encodedString = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)self,
                                                                                                      NULL, (CFStringRef)@"!*'();@&=+$,?%#[]",
@@ -512,7 +240,7 @@
     return [self stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 }
 
-- (NSString *)LightURLEncodeString {
+- (NSString *)lightURLEncodeString {
     NSMutableString *tempStr = [NSMutableString stringWithString:self];
     [tempStr replaceOccurrencesOfString:@" " withString:@"+" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [tempStr length])];
     return [[NSString stringWithFormat:@"%@",tempStr] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
