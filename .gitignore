@@ -20,4 +20,4 @@ DerivedData
 *.ipa
 *.xcuserstate
 .xcbkptlist
-ios-base/Supporting\ Files/Keychan.plist
+ios-base/Supporting\ Files/Keychain.plist

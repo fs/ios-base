@@ -7,8 +7,8 @@
 //
 
 #import "KeysManager.h"
-#warning create Keychan.plist file and rename "Keychan-Sample" to "Keychan"
-#define FileName @"Keychan-Sample"
+#warning create Keychain.plist file and rename "Keychain-Sample" to "Keychan"
+#define FileName @"Keychain-Sample"
 
 @implementation KeysManager
 

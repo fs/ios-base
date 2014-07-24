@@ -32,9 +32,9 @@
 		09BEB84A18AE41EB00FAE462 /* UIImageView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 09BEB83218AE41EB00FAE462 /* UIImageView+Utils.m */; };
 		09BEB85218AE581E00FAE462 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 09BEB85118AE581E00FAE462 /* APIManager.m */; };
 		09BEB85818AE62A500FAE462 /* IBObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 09BEB85718AE62A500FAE462 /* IBObject.m */; };
-		21759A7E198103FF00BC2510 /* Keychan.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21759A7D198103FF00BC2510 /* Keychan.plist */; };
 		21759A811981050400BC2510 /* KeysManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 21759A801981050400BC2510 /* KeysManager.m */; };
-		21E926D61981332A00C8FED0 /* Keychan-Sample.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21E926D51981332A00C8FED0 /* Keychan-Sample.plist */; };
+		21E926D91981354D00C8FED0 /* Keychain-Sample.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21E926D71981354D00C8FED0 /* Keychain-Sample.plist */; };
+		21E926DA1981354D00C8FED0 /* Keychain.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21E926D81981354D00C8FED0 /* Keychain.plist */; };
 		5033513B33B94ACD8F86C986 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F1BBFDB84E42628D46543E /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -89,10 +89,10 @@
 		09BEB85318AE58AD00FAE462 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		09BEB85618AE62A500FAE462 /* IBObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBObject.h; sourceTree = "<group>"; };
 		09BEB85718AE62A500FAE462 /* IBObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBObject.m; sourceTree = "<group>"; };
-		21759A7D198103FF00BC2510 /* Keychan.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Keychan.plist; sourceTree = "<group>"; };
 		21759A7F1981050400BC2510 /* KeysManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeysManager.h; sourceTree = "<group>"; };
 		21759A801981050400BC2510 /* KeysManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeysManager.m; sourceTree = "<group>"; };
-		21E926D51981332A00C8FED0 /* Keychan-Sample.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Keychan-Sample.plist"; sourceTree = "<group>"; };
+		21E926D71981354D00C8FED0 /* Keychain-Sample.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Keychain-Sample.plist"; sourceTree = "<group>"; };
+		21E926D81981354D00C8FED0 /* Keychain.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Keychain.plist; sourceTree = "<group>"; };
 		75CC4E694DA240F7BDB54C13 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		D4F1BBFDB84E42628D46543E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -211,8 +211,8 @@
 		09BEB80018AE16B100FAE462 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				21E926D51981332A00C8FED0 /* Keychan-Sample.plist */,
-				21759A7D198103FF00BC2510 /* Keychan.plist */,
+				21E926D71981354D00C8FED0 /* Keychain-Sample.plist */,
+				21E926D81981354D00C8FED0 /* Keychain.plist */,
 				09BEB80118AE16B100FAE462 /* InfoPlist.strings */,
 				09BEB80318AE16B100FAE462 /* ios-base-Info.plist */,
 				09BEB80418AE16B100FAE462 /* ios-base-Prefix.pch */,
@@ -357,9 +357,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21E926D61981332A00C8FED0 /* Keychan-Sample.plist in Resources */,
-				21759A7E198103FF00BC2510 /* Keychan.plist in Resources */,
 				09BEB7D018AE0AE200FAE462 /* Images.xcassets in Resources */,
+				21E926D91981354D00C8FED0 /* Keychain-Sample.plist in Resources */,
+				21E926DA1981354D00C8FED0 /* Keychain.plist in Resources */,
 				09BEB80F18AE413A00FAE462 /* mogen.sh in Resources */,
 				09BEB80618AE16B100FAE462 /* InfoPlist.strings in Resources */,
 				09BEB81018AE413A00FAE462 /* mogend.sh in Resources */,
