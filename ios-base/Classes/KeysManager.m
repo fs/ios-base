@@ -7,6 +7,8 @@
 //
 
 #import "KeysManager.h"
+#warning create Keychan.plist file and rename "Keychan-Sample" to "Keychan"
+#define FileName @"Keychan-Sample"
 
 @implementation KeysManager
 
@@ -16,7 +18,7 @@
     
     if (keysDict==nil)
     {
-        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Keychan" ofType:@"plist"];
+        NSString *filePath = [[NSBundle mainBundle] pathForResource:FileName ofType:@"plist"];
         
         if (filePath)
         {
