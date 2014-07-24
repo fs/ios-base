@@ -32,6 +32,8 @@
 		09BEB84A18AE41EB00FAE462 /* UIImageView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 09BEB83218AE41EB00FAE462 /* UIImageView+Utils.m */; };
 		09BEB85218AE581E00FAE462 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 09BEB85118AE581E00FAE462 /* APIManager.m */; };
 		09BEB85818AE62A500FAE462 /* IBObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 09BEB85718AE62A500FAE462 /* IBObject.m */; };
+		21759A7E198103FF00BC2510 /* Keychan.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21759A7D198103FF00BC2510 /* Keychan.plist */; };
+		21759A811981050400BC2510 /* KeysManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 21759A801981050400BC2510 /* KeysManager.m */; };
 		5033513B33B94ACD8F86C986 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F1BBFDB84E42628D46543E /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +88,9 @@
 		09BEB85318AE58AD00FAE462 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		09BEB85618AE62A500FAE462 /* IBObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBObject.h; sourceTree = "<group>"; };
 		09BEB85718AE62A500FAE462 /* IBObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBObject.m; sourceTree = "<group>"; };
+		21759A7D198103FF00BC2510 /* Keychan.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Keychan.plist; sourceTree = "<group>"; };
+		21759A7F1981050400BC2510 /* KeysManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeysManager.h; sourceTree = "<group>"; };
+		21759A801981050400BC2510 /* KeysManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeysManager.m; sourceTree = "<group>"; };
 		75CC4E694DA240F7BDB54C13 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		D4F1BBFDB84E42628D46543E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -204,6 +209,7 @@
 		09BEB80018AE16B100FAE462 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				21759A7D198103FF00BC2510 /* Keychan.plist */,
 				09BEB80118AE16B100FAE462 /* InfoPlist.strings */,
 				09BEB80318AE16B100FAE462 /* ios-base-Info.plist */,
 				09BEB80418AE16B100FAE462 /* ios-base-Prefix.pch */,
@@ -252,6 +258,8 @@
 			isa = PBXGroup;
 			children = (
 				09BEB85318AE58AD00FAE462 /* Constants.h */,
+				21759A7F1981050400BC2510 /* KeysManager.h */,
+				21759A801981050400BC2510 /* KeysManager.m */,
 				09BEB85018AE581E00FAE462 /* APIManager.h */,
 				09BEB85118AE581E00FAE462 /* APIManager.m */,
 			);
@@ -346,6 +354,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21759A7E198103FF00BC2510 /* Keychan.plist in Resources */,
 				09BEB7D018AE0AE200FAE462 /* Images.xcassets in Resources */,
 				09BEB80F18AE413A00FAE462 /* mogen.sh in Resources */,
 				09BEB80618AE16B100FAE462 /* InfoPlist.strings in Resources */,
@@ -419,6 +428,7 @@
 				09BEB7F818AE167C00FAE462 /* ViewController.m in Sources */,
 				09BEB80818AE16B100FAE462 /* main.m in Sources */,
 				09BEB85218AE581E00FAE462 /* APIManager.m in Sources */,
+				21759A811981050400BC2510 /* KeysManager.m in Sources */,
 				09BEB84618AE41EB00FAE462 /* UIImage+Utils.m in Sources */,
 				09BEB83A18AE41EB00FAE462 /* FSHelpers.m in Sources */,
 				09648FEE18B2100C00DAE015 /* UIBarButtonItem+Extensions.m in Sources */,
