@@ -7,12 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-
+//Common keys family fields
 #define PRIVATE_KEY @"PRIVATE"
 #define PUBLIC_KEY @"PUBLIC"
+
 #define BASE_URL_KEY @"BASE_URL"
+#define BASE_URL_STAGING_KEY @"BASE_URL_STAGING"
+
 #define API_KEY @"API_KEY"
 
+//Define your API and KEYS familys
 #define TZ_API @"TZ_API"
 #define SOCIAL_FAMILY @"Social family"
 

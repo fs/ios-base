@@ -10,7 +10,10 @@
 #import "AFNetworking.h"
 #import "KeysManager.h"
 
+#warning checkout code and remove API_KEY and rename BASE_URL for staging and production
 //Get info about this API on http://timezonedb.com/api
+
+static NSString *BASE_URL;
 
 @implementation APIManager
 
@@ -19,6 +22,14 @@
     static id sharedInstance;
     dispatch_once(&once, ^{
         sharedInstance = [[self alloc] init];
+        if ([[[NSBundle mainBundle] bundleIdentifier] hasSuffix:@"staging"])
+        {
+            BASE_URL = [[KeysManager getKeysFamily:TZ_API] objectForKeyOrNil:BASE_URL_STAGING_KEY];
+        }
+        else
+        {
+            BASE_URL = [[KeysManager getKeysFamily:TZ_API] objectForKeyOrNil:BASE_URL_KEY];
+        }
     });
     return sharedInstance;
 }
@@ -27,10 +38,10 @@
 {
     NSDictionary *APIFamily = [KeysManager getKeysFamily:TZ_API];
     
-    NSString *fullURL = [[APIFamily objectForKeyOrNil:BASE_URL_KEY] copy];
+    NSString *fullURL = [BASE_URL copy];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSDictionary *params = @{ @"zone": @"Europe/Moscow",
-                              @"key": API_KEY,
+                              @"key": [APIFamily objectForKeyOrNil:API_KEY],
                               @"format": @"json" };
     [manager GET:fullURL parameters:params
          success:^(AFHTTPRequestOperation *operation, id responseObject)

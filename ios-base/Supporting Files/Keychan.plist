@@ -4,6 +4,8 @@
 <dict>
 	<key>TZ_API</key>
 	<dict>
+		<key>BASE_URL_STAGING</key>
+		<string>http://staging/</string>
 		<key>API_KEY</key>
 		<string>PF85Q4OP7VRG</string>
 		<key>BASE_URL</key>
@@ -15,6 +17,15 @@
 		<string>public key sample</string>
 		<key>PRIVATE</key>
 		<string>private key sample</string>
+	</dict>
+	<key>Twitter</key>
+	<dict>
+		<key>BASE_URL</key>
+		<string></string>
+		<key>PUBLIC</key>
+		<string></string>
+		<key>PRIVATE</key>
+		<string></string>
 	</dict>
 </dict>
 </plist>

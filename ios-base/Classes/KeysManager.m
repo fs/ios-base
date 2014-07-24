@@ -24,7 +24,7 @@
         }
     }
     
-    return keysDict;
+    return [keysDict copy];
 }
 
 +(NSDictionary *) getKeysFamily:(NSString *)keysFamily
