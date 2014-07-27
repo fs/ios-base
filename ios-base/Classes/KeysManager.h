@@ -24,7 +24,7 @@
 
 /*! \returns The dictionary with all keys or nil if file is not found
  */
-+(NSDictionary *) getKeychan;
++(NSDictionary *) getKeychain;
 
 /*! \param keysFamily The family of keys
  * \returns The dictionary for keys family or nil if family is not exist

@@ -12,7 +12,7 @@
 
 @implementation KeysManager
 
-+(NSDictionary *) getKeychan
++(NSDictionary *) getKeychain
 {
     static NSDictionary *keysDict;
     
@@ -31,7 +31,7 @@
 
 +(NSDictionary *) getKeysFamily:(NSString *)keysFamily
 {
-    NSDictionary *keychanDict = [KeysManager getKeychan];
+    NSDictionary *keychanDict = [KeysManager getKeychain];
     
     return [keychanDict objectForKeyOrNil:keysFamily];
 }
