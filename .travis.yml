@@ -15,6 +15,7 @@ install: pod install
 
 script:
 #    - xctool test -workspace xcode_workspace -scheme xcode_scheme -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+    - xctool test -workspace xcode_workspace -scheme xcode_scheme -destination 'platform=iOS Simulator,name=iPhone Retina (4-inch),OS=7.1'
     - xcodebuild -workspace xcode_workspace -scheme xcode_scheme -destination 'platform=iOS Simulator,name=iPhone Retina (4-inch),OS=7.1' test
     
     # 1a99c36213cfe8bb235ca6e4365c0909_MTMxMDkwMjIwMTMtMDktMTcgMTE6MDE6NTkuNTQ4OTU4 API Token
