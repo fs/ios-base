@@ -8,11 +8,12 @@
 
 #import "APIManager.h"
 #import "AFNetworking.h"
+#import "KeysManager.h"
 
 #warning checkout code and remove API_KEY and rename BASE_URL for staging and production
 //Get info about this API on http://timezonedb.com/api
-#define BASE_URL [[[NSBundle mainBundle] bundleIdentifier] hasSuffix:@"staging"] ? @"http://staging/" : @"http://api.timezonedb.com/"
-#define API_KEY @"PF85Q4OP7VRG"
+
+static NSString *BASE_URL;
 
 @implementation APIManager
 
@@ -21,23 +22,38 @@
     static id sharedInstance;
     dispatch_once(&once, ^{
         sharedInstance = [[self alloc] init];
+        if ([[[NSBundle mainBundle] bundleIdentifier] hasSuffix:@"staging"])
+        {
+            BASE_URL = [[KeysManager getKeysFamily:TZ_API] objectForKeyOrNil:BASE_URL_STAGING_KEY];
+        }
+        else
+        {
+            BASE_URL = [[KeysManager getKeysFamily:TZ_API] objectForKeyOrNil:BASE_URL_KEY];
+        }
     });
     return sharedInstance;
 }
 
-- (void)getCurrentDateWithCompleteBlock:(ObjectCallback)block {
-    NSString *fullURL = [NSString stringWithFormat:@"%@",BASE_URL];
+- (void)getCurrentDateWithCompleteBlock:(ObjectCallback)block
+{
+    NSDictionary *APIFamily = [KeysManager getKeysFamily:TZ_API];
+    
+    NSString *fullURL = [BASE_URL copy];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSDictionary *params = @{ @"zone": @"Europe/Moscow",
-                              @"key": API_KEY,
+                              @"key": [APIFamily objectForKeyOrNil:API_KEY],
                               @"format": @"json" };
-    [manager GET:fullURL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSTimeInterval timeInterval = [[responseObject objectForKeyOrNil:@"timestamp"] doubleValue];
-        NSDate *date = [NSDate dateWithTimeIntervalSince1970:timeInterval];
-        BLOCK_SAFE_RUN(block, date);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        BLOCK_SAFE_RUN(block, NO);
-    }];
+    [manager GET:fullURL parameters:params
+         success:^(AFHTTPRequestOperation *operation, id responseObject)
+     {
+         NSTimeInterval timeInterval = [[responseObject objectForKeyOrNil:@"timestamp"] doubleValue];
+         NSDate *date = [NSDate dateWithTimeIntervalSince1970:timeInterval];
+         BLOCK_SAFE_RUN(block, date);
+     }
+         failure:^(AFHTTPRequestOperation *operation, NSError *error)
+     {
+         BLOCK_SAFE_RUN(block, NO);
+     }];
 }
 
 @end
