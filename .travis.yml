@@ -12,7 +12,7 @@ before_install:
 install: pod install
 
 script:
-    - xcodebuild -workspace ios-base.xcworkspace -scheme ios-base-Production -destination 'platform=iOS Simulator,name=iPhone Retina (4-inch),OS=7.1' test
+    - xcodebuild -workspace ios-base.xcworkspace -scheme ios-base-Staging -destination 'platform=iOS Simulator,name=iPhone Retina (4-inch),OS=7.1' test
 
 branches:
     only:
