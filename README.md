@@ -1,3 +1,5 @@
+[![Build Status](https://api.travis-ci.org/fs/ios-base.svg?branch=master)](https://travis-ci.org/fs/ios-base)
+
 ios-base
 =========
 
