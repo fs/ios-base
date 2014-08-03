@@ -1,0 +1,24 @@
+language: objective-c
+
+xcode_workspace: ios-base.xcworkspace
+xcode_scheme: ios-base-Production
+
+rvm: 1.9.3
+
+before_install:
+    - export LANG=en_US.UTF-8
+    - sudo gem install cocoapods --no-document
+
+install: pod install
+
+script:
+    - xcodebuild -workspace ios-base.xcworkspace -scheme ios-base-Staging -destination 'platform=iOS Simulator,name=iPhone Retina (4-inch),OS=7.1' test
+
+branches:
+    only:
+        - master
+
+notifications:
+    hipchat:
+        rooms:
+            - 1042cf61968cbf6677350648996ab3@ios-base

@@ -28,7 +28,12 @@
 
 - (void)testExample
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+#warning Don't you forget add some tests
+    // for example:
+    XCTAssertTrue(1==1, @"This is not true");
+    XCTAssertNotNil([[NSObject alloc] init], @"Object is nil");
+    XCTAssertEqual(@"string", @"string", @"Objects is not equal");
+    //XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
 }
 
 @end
