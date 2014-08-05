@@ -9,10 +9,35 @@ before_install:
     - export LANG=en_US.UTF-8
     - sudo gem install cocoapods --no-document
 
-install: pod install
+install:
+    - pod install
+
+before_script:
+    - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in certs/iosbase_TestFlight.mobileprovision.enc -d -a -out certs/iosbase_TestFlight.mobileprovision
+    - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in certs/dist.cer.enc -d -a -out certs/dist.cer
+    - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in certs/dist.p12.enc -d -a -out certs/dist.p12
+    - ./ios-base/scripts/add-key.sh
+    - ./ios-base/scripts/update-bundle.sh
 
 script:
+    - xcodebuild -workspace ios-base.xcworkspace -scheme ios-base-Production -sdk iphoneos -configuration Release OBJROOT=$PWD/build SYMROOT=$PWD/build ONLY_ACTIVE_ARCH=NO
     - xcodebuild -workspace ios-base.xcworkspace -scheme ios-base-Staging -destination 'platform=iOS Simulator,name=iPhone Retina (4-inch),OS=7.1' test
+
+after_success:
+    - ./ios-base/scripts/sign-and-upload.sh
+
+after_script:
+    - ./ios-base/scripts/remove-key.sh
+
+env:
+    global:
+        - APPNAME = "ios-base"
+        - 'DEVELOPER_NAME = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)"'
+        - PROFILE_NAME = "iosbase_TestFlight"
+        - secure: Z9sHImPmk8C446gn9KzUqprJxy3PHXJ+XJMHENXI8xpFRighWw6Edkewjq+b27Qz3ksFDrz+XMu++E4G29AhmTGdlCTl5ZvlXVBnHkZA/XjtGK8JJdB7/tEhjX2ZJYC5IqRja1Tv9W0VcFg79XC5l7c27YnpB3gO/Ph703Tly+I=
+        - secure: egtKelo36nDNjEeq4hZYLKeNJ1U46M5872pl2cGmp3ASIgJgra47tUme8QSxZAVVguJ5Bt2kpjWx0/uAJMgAl1b4hHCsB6pdwHvdBmBgo/aQh7jT4fz21u/Gt5dzH3AoZgoPIDy5aNPj2ITM/TzE8u6N6FupXmWYXAgCD4jQQjc=
+        - secure: U1ntj8+gf3PKMWkAhMWYIb+IZgVD4fTlpes/0pWSwge8B5g79PW/AuRIMHkJ8xWEUOCOl35k/G6czlIXQBmj11/7jWj4Zjr9x3y40N0eRra2VGxGhGcFTnCK51djxE/Rdcf6pDtaC1KC98347MYz9IVQf7lEWMfWLlvcAsfjb5Y=
+        - secure: hNe0T9oVCE4oN68MBJPouwi2PQf9RqengIKvj6bYvj7f0JZUnSOifZQAn48/k5sR8hiSad5hLhSpOgJbK1EqVycruuR++1SBM97gsWXnxiXwP9Ec+a1OvZmlxlNwaoj5Vrd9QB6kATOa/xSzu1/shPShJxYZlwsFXkgJaMh7pFw=
 
 branches:
     only:
@@ -22,3 +47,9 @@ notifications:
     hipchat:
         rooms:
             - 1042cf61968cbf6677350648996ab3@ios-base
+    email:
+        recipients:
+            # - one@example.com
+            # - other@example.com
+        on_success: change # [always|never|change] # default: change
+        on_failure: change # [always|never|change] # default: always
