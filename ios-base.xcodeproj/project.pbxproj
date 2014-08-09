@@ -86,6 +86,10 @@
 		09BEB85318AE58AD00FAE462 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		09BEB85618AE62A500FAE462 /* IBObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBObject.h; sourceTree = "<group>"; };
 		09BEB85718AE62A500FAE462 /* IBObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBObject.m; sourceTree = "<group>"; };
+		191763CF1992B5A4001DBDB3 /* add-key.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = "add-key.sh"; path = "Scripts/add-key.sh"; sourceTree = "<group>"; };
+		191763D01992BA1B001DBDB3 /* sign-and-upload.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = "sign-and-upload.sh"; path = "Scripts/sign-and-upload.sh"; sourceTree = "<group>"; };
+		191763D11992BD81001DBDB3 /* remove-key.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = "remove-key.sh"; path = "Scripts/remove-key.sh"; sourceTree = "<group>"; };
+		191763D21992BFAF001DBDB3 /* update-bundle.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = "update-bundle.sh"; path = "Scripts/update-bundle.sh"; sourceTree = "<group>"; };
 		191D14A01960A18900BA9D87 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = SOURCE_ROOT; };
 		75CC4E694DA240F7BDB54C13 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		D4F1BBFDB84E42628D46543E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,7 +173,6 @@
 		09BEB7DC18AE0AE200FAE462 /* ios-baseTests */ = {
 			isa = PBXGroup;
 			children = (
-				191D14A01960A18900BA9D87 /* .travis.yml */,
 				09BEB7E218AE0AE200FAE462 /* ios_baseTests.m */,
 				09BEB7DD18AE0AE200FAE462 /* Supporting Files */,
 			);
@@ -244,6 +247,7 @@
 		09BEB80C18AE413A00FAE462 /* Scripts */ = {
 			isa = PBXGroup;
 			children = (
+				199628CB199160A300351BCB /* Travis CI */,
 				09BEB80D18AE413A00FAE462 /* mogen.sh */,
 				09BEB80E18AE413A00FAE462 /* mogend.sh */,
 			);
@@ -267,6 +271,19 @@
 				09BEB85718AE62A500FAE462 /* IBObject.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		199628CB199160A300351BCB /* Travis CI */ = {
+			isa = PBXGroup;
+			children = (
+				191D14A01960A18900BA9D87 /* .travis.yml */,
+				191763CF1992B5A4001DBDB3 /* add-key.sh */,
+				191763D11992BD81001DBDB3 /* remove-key.sh */,
+				191763D01992BA1B001DBDB3 /* sign-and-upload.sh */,
+				191763D21992BFAF001DBDB3 /* update-bundle.sh */,
+			);
+			name = "Travis CI";
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -587,11 +604,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ios-base/Supporting Files/ios-base-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/ios-base/Supporting Files/ios-base-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "78A4A111-B8AD-4206-BF27-8186E24E0A01";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -759,11 +779,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Staging";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ios-base/Supporting Files/ios-base-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/ios-base/Supporting Files/ios-base-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "78A4A111-B8AD-4206-BF27-8186E24E0A01";
 				WRAPPER_EXTENSION = app;
 			};
 			name = "Release Staging";
