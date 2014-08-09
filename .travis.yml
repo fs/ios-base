@@ -13,7 +13,7 @@ install:
     - pod install
 
 before_script:
-    - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in certs/iosbase_TestFlight.mobileprovision.enc -d -a -out certs/iosbase_TestFlight.mobileprovision
+    - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in certs/$PROFILE_NAME.mobileprovision.enc -d -a -out certs/$PROFILE_NAME.mobileprovision
     - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in certs/dist.cer.enc -d -a -out certs/dist.cer
     - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in certs/dist.p12.enc -d -a -out certs/dist.p12
     - ./ios-base/scripts/add-key.sh
@@ -31,9 +31,9 @@ after_script:
 
 env:
     global:
-        - APPNAME = "ios-base"
-        - 'DEVELOPER_NAME = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)"'
-        - PROFILE_NAME = "iosbase_TestFlight"
+        - APP_NAME="ios-base"
+        - 'DEVELOPER_NAME="iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)"'
+        - PROFILE_NAME="iosbase_TestFlight"
         - secure: Z9sHImPmk8C446gn9KzUqprJxy3PHXJ+XJMHENXI8xpFRighWw6Edkewjq+b27Qz3ksFDrz+XMu++E4G29AhmTGdlCTl5ZvlXVBnHkZA/XjtGK8JJdB7/tEhjX2ZJYC5IqRja1Tv9W0VcFg79XC5l7c27YnpB3gO/Ph703Tly+I=
         - secure: egtKelo36nDNjEeq4hZYLKeNJ1U46M5872pl2cGmp3ASIgJgra47tUme8QSxZAVVguJ5Bt2kpjWx0/uAJMgAl1b4hHCsB6pdwHvdBmBgo/aQh7jT4fz21u/Gt5dzH3AoZgoPIDy5aNPj2ITM/TzE8u6N6FupXmWYXAgCD4jQQjc=
         - secure: U1ntj8+gf3PKMWkAhMWYIb+IZgVD4fTlpes/0pWSwge8B5g79PW/AuRIMHkJ8xWEUOCOl35k/G6czlIXQBmj11/7jWj4Zjr9x3y40N0eRra2VGxGhGcFTnCK51djxE/Rdcf6pDtaC1KC98347MYz9IVQf7lEWMfWLlvcAsfjb5Y=
