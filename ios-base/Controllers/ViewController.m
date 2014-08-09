@@ -8,7 +8,6 @@
 
 #import "ViewController.h"
 #import "APIManager.h"
-#import <BlocksKit+UIKit.h>
 
 @interface ViewController ()
 
@@ -30,6 +29,11 @@
         NSLog(@"Hello world");
     });
     
+    UIView *v = [[UIView alloc] initWithFrame:CGRectMake(20, 20, 260, 260)];
+    v.backgroundColor = [UIColor redColor];
+    v.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    [v addShineGradient];
+    [self.view addSubview:v];
 }
 
 - (void)didReceiveMemoryWarning
