@@ -27,7 +27,7 @@ echo "********************"
 echo ""
 
 RELEASE_DATE=`date '+%Y-%m-%d %H:%M:%S'`
-RELEASE_NOTES="This version was uploaded automagically by Travis\nTravis Build number $TRAVIS_BUILD_NUMBER\nUploaded: $RELEASE_DATE"
+RELEASE_NOTES="This version was uploaded automagically by Travis\nTravis Build number $TRAVIS_BUILD_NUMBER\nUploaded: $RELEASE_DATE\nCommits in push/pull request: $TRAVIS_COMMIT_RANGE\nLast commit: $TRAVIS_COMMIT"
 
 curl http://testflightapp.com/api/builds.json \
 -F file="@$OUTPUTDIR/$APP_NAME.ipa" \
