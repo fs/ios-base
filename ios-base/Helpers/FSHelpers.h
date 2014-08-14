@@ -101,6 +101,7 @@ static inline void dispatch_after_short(CGFloat delay, dispatch_block_t block){
 - (void)setArrayOrEmptyString:(NSArray*)array forKey:(id)aKey;
 - (void)setObjectIfNotNil:(id)anObject forKey:(id)aKey;
 - (void)trimValues;
+- (void)renameKey:(NSString *)oldKey toKey:(NSString *)newKey;
 
 @end
 
