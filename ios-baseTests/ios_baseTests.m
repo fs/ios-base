@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "APIManager.h"
 
 @interface ios_baseTests : XCTestCase
 
@@ -34,6 +35,12 @@
     XCTAssertNotNil([[NSObject alloc] init], @"Object is nil");
     XCTAssertEqual(@"string", @"string", @"Objects is not equal");
     //XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    
+    [[APIManager sharedManager] getCurrentDateWithCompleteBlock:^(id object)
+    {
+        XCTAssertNotNil(object, @"Date is nil");
+        XCTAssertTrue([object isKindOfClass:[NSDate class]], @"Not date class");
+    }];
 }
 
 @end
