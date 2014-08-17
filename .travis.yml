@@ -20,8 +20,8 @@ before_script:
     - ./ios-base/scripts/update-bundle.sh
 
 script:
-    - xcodebuild -workspace ios-base.xcworkspace -scheme ios-base-Production -sdk iphoneos -configuration Release OBJROOT=$PWD/build SYMROOT=$PWD/build ONLY_ACTIVE_ARCH=NO
-    - xcodebuild -workspace ios-base.xcworkspace -scheme ios-base-Staging -destination 'platform=iOS Simulator,name=iPhone Retina (4-inch),OS=7.1' test
+    - ./ios-base/scripts/build.sh
+    - ./ios-base/scripts/test.sh
 
 after_success:
     - ./ios-base/scripts/sign-and-upload.sh
