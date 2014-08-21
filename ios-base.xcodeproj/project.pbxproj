@@ -283,6 +283,8 @@
 			isa = PBXGroup;
 			children = (
 				191D14A01960A18900BA9D87 /* .travis.yml */,
+				19B99DC919A11E18003A71CA /* build.sh */,
+				19B99DCA19A11F51003A71CA /* test.sh */,
 				191763CF1992B5A4001DBDB3 /* add-key.sh */,
 				191763D11992BD81001DBDB3 /* remove-key.sh */,
 				191763D01992BA1B001DBDB3 /* sign-and-upload.sh */,
