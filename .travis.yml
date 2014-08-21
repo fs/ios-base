@@ -46,7 +46,7 @@ branches:
 notifications:
     hipchat:
         rooms:
-            - 1042cf61968cbf6677350648996ab3@ios-base
+            - $API_TOKEN@ios-base
     email:
         recipients:
             # - one@example.com
