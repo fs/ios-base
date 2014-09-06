@@ -91,6 +91,7 @@
 		191763D11992BD81001DBDB3 /* remove-key.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = "remove-key.sh"; path = "Scripts/remove-key.sh"; sourceTree = "<group>"; };
 		191763D21992BFAF001DBDB3 /* update-bundle.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = "update-bundle.sh"; path = "Scripts/update-bundle.sh"; sourceTree = "<group>"; };
 		191D14A01960A18900BA9D87 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = SOURCE_ROOT; };
+		19A1152F19BB7E6C002F6F5A /* oclint.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = oclint.sh; path = Scripts/oclint.sh; sourceTree = "<group>"; };
 		19B99DC919A11E18003A71CA /* build.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = build.sh; path = Scripts/build.sh; sourceTree = "<group>"; };
 		19B99DCA19A11F51003A71CA /* test.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = test.sh; path = Scripts/test.sh; sourceTree = "<group>"; };
 		75CC4E694DA240F7BDB54C13 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
@@ -279,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				191D14A01960A18900BA9D87 /* .travis.yml */,
+				19A1152F19BB7E6C002F6F5A /* oclint.sh */,
 				19B99DC919A11E18003A71CA /* build.sh */,
 				19B99DCA19A11F51003A71CA /* test.sh */,
 				191763CF1992B5A4001DBDB3 /* add-key.sh */,

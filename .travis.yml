@@ -20,6 +20,7 @@ before_script:
     - ./ios-base/scripts/update-bundle.sh
 
 script:
+    - ./ios-base/scripts/oclint.sh
     - ./ios-base/scripts/build.sh
     - ./ios-base/scripts/test.sh
 
