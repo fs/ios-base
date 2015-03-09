@@ -1,11 +1,11 @@
 PODS:
   - AFNetworking (2.2.4):
-    - AFNetworking/NSURLConnection
-    - AFNetworking/NSURLSession
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-    - AFNetworking/UIKit
+    - AFNetworking/NSURLConnection (= 2.2.4)
+    - AFNetworking/NSURLSession (= 2.2.4)
+    - AFNetworking/Reachability (= 2.2.4)
+    - AFNetworking/Security (= 2.2.4)
+    - AFNetworking/Serialization (= 2.2.4)
+    - AFNetworking/UIKit (= 2.2.4)
   - AFNetworking/NSURLConnection (2.2.4):
     - AFNetworking/Reachability
     - AFNetworking/Security
@@ -19,7 +19,7 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - BlocksKit (2.2.3):
-    - BlocksKit/All
+    - BlocksKit/All (= 2.2.3)
   - BlocksKit/All (2.2.3):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
@@ -33,16 +33,21 @@ PODS:
   - BlocksKit/UIKit (2.2.3):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
+  - KIF (3.1.2):
+    - KIF/XCTest (= 3.1.2)
+  - KIF/XCTest (3.1.2)
   - SVProgressHUD (1.0)
 
 DEPENDENCIES:
   - AFNetworking
   - BlocksKit
+  - KIF (~> 3.0)
   - SVProgressHUD
 
 SPEC CHECKSUMS:
   AFNetworking: ab63e259fe91eef4519b371ef0a4955af0e73e64
   BlocksKit: 07c8a80f04275efac6a5f8b973782489c083a182
+  KIF: 068074b24dd455025e7f2a488ba4fb07b9ce047b
   SVProgressHUD: 5034c6e22b8c2ca3e09402e48d41ed0340aa1c50
 
-COCOAPODS: 0.33.1
+COCOAPODS: 0.35.0

@@ -8,3 +8,7 @@ pod 'SVProgressHUD'
 #pod 'SSKeychain'
 #pod 'NSData+Base64'
 #pod 'MKStoreKit'
+
+target 'ios-baseTests', :exclusive => true do
+    pod 'KIF', '~> 3.0', :configurations => ['Debug', 'Debug Staging']
+end
