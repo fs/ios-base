@@ -53,7 +53,7 @@ pod 'AFNetworking'                         #AFNetworking is a delightful network
 ##### Sound
 #pod 'SoundManager'                         #SoundManager is a simple class for playing sound and music in iOS or Mac apps.
 
-##### Tests
-#target 'ios-baseTests', :exclusive => true do
-#    pod 'KIF', '~> 3.0', :configurations => ['Debug', 'Debug Staging']
-#end
+################# TESTS
+target 'ios-baseTests', :exclusive => true do
+    pod 'KIF', '~> 3.0', :configurations => ['Debug', 'Debug Staging']
+end

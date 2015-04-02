@@ -18,20 +18,18 @@
 		09BEB7E118AE0AE200FAE462 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 09BEB7DF18AE0AE200FAE462 /* InfoPlist.strings */; };
 		09BEB7E318AE0AE200FAE462 /* ios_baseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 09BEB7E218AE0AE200FAE462 /* ios_baseTests.m */; };
 		09BEB7F818AE167C00FAE462 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09BEB7F718AE167C00FAE462 /* ViewController.m */; };
-		09BEB7FF18AE168C00FAE462 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09BEB7FC18AE168C00FAE462 /* Main.storyboard */; };
 		09BEB80618AE16B100FAE462 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 09BEB80118AE16B100FAE462 /* InfoPlist.strings */; };
 		09BEB80818AE16B100FAE462 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 09BEB80518AE16B100FAE462 /* main.m */; };
 		09BEB80F18AE413A00FAE462 /* mogen.sh in Resources */ = {isa = PBXBuildFile; fileRef = 09BEB80D18AE413A00FAE462 /* mogen.sh */; };
 		09BEB81018AE413A00FAE462 /* mogend.sh in Resources */ = {isa = PBXBuildFile; fileRef = 09BEB80E18AE413A00FAE462 /* mogend.sh */; };
 		09BEB85218AE581E00FAE462 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 09BEB85118AE581E00FAE462 /* APIManager.m */; };
-		09BEB85818AE62A500FAE462 /* FSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 09BEB85718AE62A500FAE462 /* FSObject.m */; };
-		5033513B33B94ACD8F86C986 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F1BBFDB84E42628D46543E /* libPods.a */; };
-		E72730CD1ACA7CAA005B76B3 /* ErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E72730CC1ACA7CAA005B76B3 /* ErrorHandler.m */; };
-		E72730D01ACA7E0F005B76B3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E72730D21ACA7E0F005B76B3 /* Localizable.strings */; };
-		E73495E91ACDCF74006FB7FB /* FSDate.m in Sources */ = {isa = PBXBuildFile; fileRef = E73495E81ACDCF74006FB7FB /* FSDate.m */; };
 		19F97F321AAE419C006A3661 /* InterfaceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F97F311AAE419C006A3661 /* InterfaceTests.m */; };
 		5033513B33B94ACD8F86C986 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F1BBFDB84E42628D46543E /* libPods.a */; };
 		D2CF82CF8CEDD6D61D368176 /* libPods-ios-baseTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7811AEA0EBA721F40B9DE400 /* libPods-ios-baseTests.a */; };
+		E73495F31ACDEDFC006FB7FB /* FSDate.m in Sources */ = {isa = PBXBuildFile; fileRef = E73495F01ACDEDFC006FB7FB /* FSDate.m */; };
+		E73495F41ACDEDFC006FB7FB /* FSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E73495F21ACDEDFC006FB7FB /* FSObject.m */; };
+		E73495F71ACDEE0A006FB7FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E73495F51ACDEE0A006FB7FB /* Main.storyboard */; };
+		E73495FA1ACDEE5F006FB7FB /* ErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E73495F91ACDEE5F006FB7FB /* ErrorHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +57,6 @@
 		09BEB7E218AE0AE200FAE462 /* ios_baseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ios_baseTests.m; sourceTree = "<group>"; };
 		09BEB7F618AE167C00FAE462 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		09BEB7F718AE167C00FAE462 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		09BEB7FD18AE168C00FAE462 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		09BEB80218AE16B100FAE462 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		09BEB80318AE16B100FAE462 /* ios-base-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ios-base-Info.plist"; sourceTree = "<group>"; };
 		09BEB80418AE16B100FAE462 /* ios-base-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ios-base-Prefix.pch"; sourceTree = "<group>"; };
@@ -68,9 +65,6 @@
 		09BEB80E18AE413A00FAE462 /* mogend.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = mogend.sh; sourceTree = "<group>"; };
 		09BEB85018AE581E00FAE462 /* APIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
 		09BEB85118AE581E00FAE462 /* APIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
-		09BEB85318AE58AD00FAE462 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Classes/Constants.h; sourceTree = "<group>"; };
-		09BEB85618AE62A500FAE462 /* FSObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSObject.h; sourceTree = "<group>"; };
-		09BEB85718AE62A500FAE462 /* FSObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSObject.m; sourceTree = "<group>"; };
 		0A986FED3258FDFDBD6F4BBD /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		0E7FB9CAC8C85742D1D8B0F9 /* Pods-ios-baseTests.release staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-baseTests.release staging.xcconfig"; path = "Pods/Target Support Files/Pods-ios-baseTests/Pods-ios-baseTests.release staging.xcconfig"; sourceTree = "<group>"; };
 		191763CF1992B5A4001DBDB3 /* add-key.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = "add-key.sh"; path = "Scripts/add-key.sh"; sourceTree = "<group>"; };
@@ -81,12 +75,6 @@
 		19A1152F19BB7E6C002F6F5A /* oclint.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = oclint.sh; path = Scripts/oclint.sh; sourceTree = "<group>"; };
 		19B99DC919A11E18003A71CA /* build.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = build.sh; path = Scripts/build.sh; sourceTree = "<group>"; };
 		19B99DCA19A11F51003A71CA /* test.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = test.sh; path = Scripts/test.sh; sourceTree = "<group>"; };
-		D4F1BBFDB84E42628D46543E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		E72730CB1ACA7CAA005B76B3 /* ErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorHandler.h; sourceTree = "<group>"; };
-		E72730CC1ACA7CAA005B76B3 /* ErrorHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorHandler.m; sourceTree = "<group>"; };
-		E72730D11ACA7E0F005B76B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		E73495E71ACDCF74006FB7FB /* FSDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSDate.h; sourceTree = "<group>"; };
-		E73495E81ACDCF74006FB7FB /* FSDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSDate.m; sourceTree = "<group>"; };
 		19F97F311AAE419C006A3661 /* InterfaceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterfaceTests.m; sourceTree = "<group>"; };
 		3E551A38583C16241E5A22D9 /* Pods.release staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods.release staging.xcconfig"; path = "Pods/Target Support Files/Pods/Pods.release staging.xcconfig"; sourceTree = "<group>"; };
 		7811AEA0EBA721F40B9DE400 /* libPods-ios-baseTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ios-baseTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +82,15 @@
 		933D374FB21BC79645773A3C /* Pods-ios-baseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-baseTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios-baseTests/Pods-ios-baseTests.release.xcconfig"; sourceTree = "<group>"; };
 		BC8D723AF2A72EFBC55A22AC /* Pods-ios-baseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-baseTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios-baseTests/Pods-ios-baseTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BEFEC6DB307050B872853FDC /* Pods-ios-baseTests.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-baseTests.debug staging.xcconfig"; path = "Pods/Target Support Files/Pods-ios-baseTests/Pods-ios-baseTests.debug staging.xcconfig"; sourceTree = "<group>"; };
+		D4F1BBFDB84E42628D46543E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E73495EF1ACDEDFC006FB7FB /* FSDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSDate.h; sourceTree = "<group>"; };
+		E73495F01ACDEDFC006FB7FB /* FSDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSDate.m; sourceTree = "<group>"; };
+		E73495F11ACDEDFC006FB7FB /* FSObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSObject.h; sourceTree = "<group>"; };
+		E73495F21ACDEDFC006FB7FB /* FSObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSObject.m; sourceTree = "<group>"; };
+		E73495F61ACDEE0A006FB7FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E73495F81ACDEE5F006FB7FB /* ErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorHandler.h; sourceTree = "<group>"; };
+		E73495F91ACDEE5F006FB7FB /* ErrorHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorHandler.m; sourceTree = "<group>"; };
+		E73495FB1ACDEE74006FB7FB /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		F51B39E6D6CE350DF5DEF800 /* Pods.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods.debug staging.xcconfig"; path = "Pods/Target Support Files/Pods/Pods.debug staging.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,7 +127,7 @@
 				09BEB7DC18AE0AE200FAE462 /* ios-baseTests */,
 				09BEB7B318AE0AE200FAE462 /* Frameworks */,
 				09BEB7B218AE0AE200FAE462 /* Products */,
-				F3AC95C57DD7B5FD10ECE465 /* Pods */,
+				5E1D3C0C677EAD850D285980 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -161,13 +158,13 @@
 			children = (
 				09BEB7C318AE0AE200FAE462 /* AppDelegate.h */,
 				09BEB7C418AE0AE200FAE462 /* AppDelegate.m */,
-				09BEB85318AE58AD00FAE462 /* Constants.h */,
+				E73495FB1ACDEE74006FB7FB /* Constants.h */,
 				09BEB7CF18AE0AE200FAE462 /* Images.xcassets */,
-				09BEB84F18AE57DC00FAE462 /* Managers */,
 				09BEB85518AE628200FAE462 /* Models */,
-				E72730D31ACA8B03005B76B3 /* Views */,
+				09BEB84F18AE57DC00FAE462 /* Classes */,
 				09BEB7F518AE167C00FAE462 /* Controllers */,
 				09BEB7F918AE168C00FAE462 /* Storyboards */,
+				09BEB80B18AE40BA00FAE462 /* Libraries */,
 				09BEB80C18AE413A00FAE462 /* Scripts */,
 				09BEB80018AE16B100FAE462 /* Supporting Files */,
 			);
@@ -205,7 +202,7 @@
 		09BEB7F918AE168C00FAE462 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				09BEB7FC18AE168C00FAE462 /* Main.storyboard */,
+				E73495F51ACDEE0A006FB7FB /* Main.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -213,13 +210,19 @@
 		09BEB80018AE16B100FAE462 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E72730D21ACA7E0F005B76B3 /* Localizable.strings */,
 				09BEB80118AE16B100FAE462 /* InfoPlist.strings */,
 				09BEB80318AE16B100FAE462 /* ios-base-Info.plist */,
 				09BEB80418AE16B100FAE462 /* ios-base-Prefix.pch */,
 				09BEB80518AE16B100FAE462 /* main.m */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		09BEB80B18AE40BA00FAE462 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Libraries;
 			sourceTree = "<group>";
 		};
 		09BEB80C18AE413A00FAE462 /* Scripts */ = {
@@ -232,25 +235,24 @@
 			path = Scripts;
 			sourceTree = "<group>";
 		};
-		09BEB84F18AE57DC00FAE462 /* Managers */ = {
+		09BEB84F18AE57DC00FAE462 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				09BEB85018AE581E00FAE462 /* APIManager.h */,
 				09BEB85118AE581E00FAE462 /* APIManager.m */,
-				E72730CB1ACA7CAA005B76B3 /* ErrorHandler.h */,
-				E72730CC1ACA7CAA005B76B3 /* ErrorHandler.m */,
+				E73495F81ACDEE5F006FB7FB /* ErrorHandler.h */,
+				E73495F91ACDEE5F006FB7FB /* ErrorHandler.m */,
 			);
-			name = Managers;
 			path = Classes;
 			sourceTree = "<group>";
 		};
 		09BEB85518AE628200FAE462 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				09BEB85618AE62A500FAE462 /* FSObject.h */,
-				09BEB85718AE62A500FAE462 /* FSObject.m */,
-				E73495E71ACDCF74006FB7FB /* FSDate.h */,
-				E73495E81ACDCF74006FB7FB /* FSDate.m */,
+				E73495EF1ACDEDFC006FB7FB /* FSDate.h */,
+				E73495F01ACDEDFC006FB7FB /* FSDate.m */,
+				E73495F11ACDEDFC006FB7FB /* FSObject.h */,
+				E73495F21ACDEDFC006FB7FB /* FSObject.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -367,12 +369,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E73495F71ACDEE0A006FB7FB /* Main.storyboard in Resources */,
 				09BEB7D018AE0AE200FAE462 /* Images.xcassets in Resources */,
 				09BEB80F18AE413A00FAE462 /* mogen.sh in Resources */,
 				09BEB80618AE16B100FAE462 /* InfoPlist.strings in Resources */,
-				E72730D01ACA7E0F005B76B3 /* Localizable.strings in Resources */,
 				09BEB81018AE413A00FAE462 /* mogend.sh in Resources */,
-				09BEB7FF18AE168C00FAE462 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,13 +468,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E73495FA1ACDEE5F006FB7FB /* ErrorHandler.m in Sources */,
 				09BEB7F818AE167C00FAE462 /* ViewController.m in Sources */,
 				09BEB80818AE16B100FAE462 /* main.m in Sources */,
+				E73495F31ACDEDFC006FB7FB /* FSDate.m in Sources */,
 				09BEB85218AE581E00FAE462 /* APIManager.m in Sources */,
-				09BEB85818AE62A500FAE462 /* FSObject.m in Sources */,
 				09BEB7C518AE0AE200FAE462 /* AppDelegate.m in Sources */,
-				E72730CD1ACA7CAA005B76B3 /* ErrorHandler.m in Sources */,
-				E73495E91ACDCF74006FB7FB /* FSDate.m in Sources */,
+				E73495F41ACDEDFC006FB7FB /* FSObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,14 +506,6 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		09BEB7FC18AE168C00FAE462 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				09BEB7FD18AE168C00FAE462 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		09BEB80118AE16B100FAE462 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -521,12 +514,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		E72730D21ACA7E0F005B76B3 /* Localizable.strings */ = {
+		E73495F51ACDEE0A006FB7FB /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E72730D11ACA7E0F005B76B3 /* en */,
+				E73495F61ACDEE0A006FB7FB /* Base */,
 			);
-			name = Localizable.strings;
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -597,7 +590,6 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -615,7 +607,7 @@
 		};
 		09BEB7E718AE0AE200FAE462 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 20A9326941B4F8D261136408 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 0A986FED3258FDFDBD6F4BBD /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -629,7 +621,7 @@
 		};
 		09BEB7E818AE0AE200FAE462 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FDFEF81CED2464D240EF5ECE /* Pods.release.xcconfig */;
+			baseConfigurationReference = 7D43C2EE3A776527C5A14891 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -712,7 +704,6 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
-					"STAGING=1",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -732,7 +723,7 @@
 		};
 		1904FC651944A6BE0092A6D3 /* Debug Staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A3B1AE01422E2DDB5F98499A /* Pods.debug staging.xcconfig */;
+			baseConfigurationReference = F51B39E6D6CE350DF5DEF800 /* Pods.debug staging.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Staging";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -789,7 +780,6 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = "STAGING=1";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -807,7 +797,7 @@
 		};
 		1904FC681944A6DB0092A6D3 /* Release Staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4EDBEE898FD376A17704A5EB /* Pods.release staging.xcconfig */;
+			baseConfigurationReference = 3E551A38583C16241E5A22D9 /* Pods.release staging.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Staging";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
