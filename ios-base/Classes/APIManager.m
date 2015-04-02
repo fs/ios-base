@@ -61,7 +61,20 @@ static APIManager *sharedInstance = nil;
 - (AFHTTPRequestOperation *)getCurrentDateWithParams:(NSDictionary *)params
                                           completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject))completion
                                               failed:(void (^)(AFHTTPRequestOperation *operation, NSError *error, BOOL isCancelled))failed
-{    
+{
+#if API_TEST_CURRENT_DATE
+    NSURL *bootstrapURL =
+    [[NSBundle mainBundle] URLForResource:@"date"
+                            withExtension:@"json"];
+    NSData *data        = [[NSData alloc] initWithContentsOfURL:bootstrapURL];
+    id responseObject = [NSJSONSerialization JSONObjectWithData:data
+                                                        options:NSJSONReadingAllowFragments
+                                                          error:nil];
+    BLOCK_SAFE_RUN(completion, nil, responseObject);
+    
+    return nil;
+    
+#else
     AFHTTPRequestOperation *operation =
     [[self operationManager] GET:@""
                       parameters:params
@@ -97,6 +110,7 @@ static APIManager *sharedInstance = nil;
                              }
                          }];
     return operation;
+#endif
 }
 
 @end

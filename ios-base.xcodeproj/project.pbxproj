@@ -30,6 +30,7 @@
 		E73495F41ACDEDFC006FB7FB /* FSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E73495F21ACDEDFC006FB7FB /* FSObject.m */; };
 		E73495F71ACDEE0A006FB7FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E73495F51ACDEE0A006FB7FB /* Main.storyboard */; };
 		E73495FA1ACDEE5F006FB7FB /* ErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E73495F91ACDEE5F006FB7FB /* ErrorHandler.m */; };
+		E73495FE1ACDF3A1006FB7FB /* date.json in Resources */ = {isa = PBXBuildFile; fileRef = E73495FD1ACDF3A1006FB7FB /* date.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		E73495F81ACDEE5F006FB7FB /* ErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorHandler.h; sourceTree = "<group>"; };
 		E73495F91ACDEE5F006FB7FB /* ErrorHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorHandler.m; sourceTree = "<group>"; };
 		E73495FB1ACDEE74006FB7FB /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		E73495FD1ACDF3A1006FB7FB /* date.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = date.json; sourceTree = "<group>"; };
 		F51B39E6D6CE350DF5DEF800 /* Pods.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods.debug staging.xcconfig"; path = "Pods/Target Support Files/Pods/Pods.debug staging.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,6 +168,7 @@
 				09BEB7F918AE168C00FAE462 /* Storyboards */,
 				09BEB80B18AE40BA00FAE462 /* Libraries */,
 				09BEB80C18AE413A00FAE462 /* Scripts */,
+				E73495FC1ACDF37A006FB7FB /* Bootstrap */,
 				09BEB80018AE16B100FAE462 /* Supporting Files */,
 			);
 			path = "ios-base";
@@ -288,6 +291,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E73495FC1ACDF37A006FB7FB /* Bootstrap */ = {
+			isa = PBXGroup;
+			children = (
+				E73495FD1ACDF3A1006FB7FB /* date.json */,
+			);
+			name = Bootstrap;
+			path = Scripts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -370,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E73495F71ACDEE0A006FB7FB /* Main.storyboard in Resources */,
+				E73495FE1ACDF3A1006FB7FB /* date.json in Resources */,
 				09BEB7D018AE0AE200FAE462 /* Images.xcassets in Resources */,
 				09BEB80F18AE413A00FAE462 /* mogen.sh in Resources */,
 				09BEB80618AE16B100FAE462 /* InfoPlist.strings in Resources */,

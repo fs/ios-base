@@ -40,9 +40,6 @@
 + (AFHTTPRequestOperation *)API_getCurrentDateWithCompletion:(void (^)(AFHTTPRequestOperation *operation, FSDate *date))completion
                                                       failed:(void (^)(AFHTTPRequestOperation *operation, NSError *error, BOOL isCancelled))failed
 {
-#if API_TEST_CURRENT_DATE
-    
-#else
     NSDictionary *params = @{
                              @"zone"        : @"Europe/Moscow",
                              @"key"         : kTimezoneAPIKey,
@@ -61,8 +58,6 @@
                                                   failed:failed];
     
     return operation;
-
-#endif
 }
 
 @end
