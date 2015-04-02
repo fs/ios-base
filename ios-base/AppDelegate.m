@@ -1,17 +1,18 @@
 //
 //  AppDelegate.m
-//  ios-base
-//
-//  Created by Danis Ziganshin on 14.02.14.
-//  Copyright (c) 2014 FlatStack. All rights reserved.
 //
 
 #import "AppDelegate.h"
 
 @implementation AppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+- (BOOL)application:(UIApplication *)application
+didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    //setting AFNetwork
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
+    
     // Override point for customization after application launch.
     return YES;
 }
