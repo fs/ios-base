@@ -3,8 +3,6 @@ language: objective-c
 xcode_workspace: ios-base.xcworkspace
 xcode_scheme: ios-base-Production
 
-rvm: 1.9.3
-
 before_install:
     - export LANG=en_US.UTF-8
     - sudo gem install cocoapods --no-document

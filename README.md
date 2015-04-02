@@ -7,6 +7,15 @@ ios-base is a iOS template project designed by iOS developers from [FlatStack](h
 
 ## Get started
 
+To setup project follow a few simple steps:
+ 1. [Clone or download](#clone-or-download).
+ 2. [Rename project](#rename-project).
+ 3. [Configure CocoaPods](#configure-cocoapods).
+ 4. [Configure mogenerator](#configure-mogenerator).
+ 5. [Configure Crashlytics](#configure-crashlytics).
+ 6. [Configure Travis-CI](#configure-travis-ci).
+ 7. [Few last things](#few-last-things).
+
 ### Clone or download
 
 To get started you can clone or download project as zip. To preset new project prefer download zip to keep commit history clean.
@@ -84,10 +93,18 @@ pod install
 
 ### Configure Crashlytics
 All about integration of [Crashlytics](http://try.crashlytics.com/) you can read [here](https://github.com/fs/guides/tree/master/services-and-tools/crashlytics).
+
 ### Configure Travis-CI
 All about integration of [Travis-CI](https://travis-ci.org/) you can read [here](https://github.com/fs/guides/tree/master/services-and-tools/travis-ci).
-### Last step
-Last step of configuration project is removing all unnecessary files from project and edit **README.md**
+
+**WARNING!!!** If you do not want to setup Travis-CI in your project you should remove ***certs*** and ***oclint*** folders from project.
+
+### Few last things
+
+* Removing any other unnecessary files from project.
+* Edit **README.md**.
+* Add **Launch.xib** if necessary.
+* Turn on **autolayout** and **size classes** in storyboard if necessary.
 
 ## Included scripts
 
@@ -104,7 +121,7 @@ sh ios-base/Scripts/test.sh
 sh ios-base/Scripts/oclint.sh 
 ```
 
-WARNING!!! These scripts used by Travis-CI so you should not change them!
+**WARNING!!!** These scripts used by Travis-CI so you should not change them!
 
 ## Credits
 
@@ -113,4 +130,4 @@ It was written by [Flatstack](http://www.flatstack.com) with the help of our
 [contributors](http://github.com/fs/ios-base/contributors).
 
 
-[![Flatstack](http://www.flatstack.com/assets/images/logo.png)](http://www.flatstack.com)
+[![Flatstack](https://avatars0.githubusercontent.com/u/15136?v=2&s=200)](http://www.flatstack.com)

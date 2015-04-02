@@ -45,7 +45,7 @@ pod 'AFNetworking'                         #AFNetworking is a delightful network
 #pod 'NSDate-Time-Ago'                      #Implements Facebooks format for Time Ago (on their mobile apps). Allow customization of text.
 
 ##### UIDevice
-#pod 'uidevice-extension'                   #
+#pod 'uidevice-extension'                   #device extensions
 
 ##### XML parser
 #pod 'XMLDictionary'                        #XMLDictionary is a class designed to simplify parsing and generating of XML on iOS and Mac OS.
@@ -53,9 +53,7 @@ pod 'AFNetworking'                         #AFNetworking is a delightful network
 ##### Sound
 #pod 'SoundManager'                         #SoundManager is a simple class for playing sound and music in iOS or Mac apps.
 
-
-
-
-
-
-
+##### Tests
+#target 'ios-baseTests', :exclusive => true do
+#    pod 'KIF', '~> 3.0', :configurations => ['Debug', 'Debug Staging']
+#end
