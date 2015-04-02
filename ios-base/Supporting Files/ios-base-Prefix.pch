@@ -13,6 +13,8 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+    #import <FSHelper/FSHelper.h>
+
     #import "Constants.h"
-    #import "FSHelpers.h"
+    #import "APIManager.h"
 #endif
