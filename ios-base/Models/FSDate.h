@@ -24,7 +24,6 @@
 #pragma mark -
 @interface FSDate (API)
 
-+ (AFHTTPRequestOperation *)API_getCurrentDateWithCompletion:(void (^)(AFHTTPRequestOperation *operation, FSDate *date))completion
-                                                      failed:(void (^)(AFHTTPRequestOperation *operation, NSError *error, BOOL isCancelled))failed;
++ (AFHTTPRequestOperation *)API_getCurrentDateWithCompletion:(void (^)(AFHTTPRequestOperation *operation, FSDate *date))completion failed:(void (^)(AFHTTPRequestOperation *operation, NSError *error, BOOL isCancelled))failed;
 
 @end

@@ -11,9 +11,7 @@
 
 @property (nonatomic, strong, readonly) AFHTTPRequestOperation *requestOperation;
 
-+ (void)errorDescription:(NSDictionary *)errorDict
-                     key:(NSString **)resultKey
-                  reason:(NSString **)reasonError;
++ (void)errorDescription:(NSDictionary *)errorDict key:(NSString **)resultKey reason:(NSString **)reasonError;
 
 - (id)initFromFailureRequestOperation:(AFHTTPRequestOperation *)requestOperation;
 

@@ -1,11 +1,3 @@
-/* 
-  Localizable.strings
-  TrailSee
-
-  Created by Vladimir Goncharov on 19.08.14.
-  Copyright (c) 2014 FlatStack. All rights reserved.
-*/
-
 /* STANDART */
 "OK"                = "OK";
 "CANCEL"            = "Cancel";

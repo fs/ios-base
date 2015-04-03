@@ -6,8 +6,8 @@
 
 @implementation FSObject
 
-- (void)updateWithDictionary:(NSDictionary *)dictionary
-{
+- (void)updateWithDictionary:(NSDictionary *)dictionary {
+    
     self.ID     = dictionary[@"id"];
 }
 

@@ -168,7 +168,6 @@
 				09BEB84F18AE57DC00FAE462 /* Classes */,
 				09BEB7F518AE167C00FAE462 /* Controllers */,
 				09BEB7F918AE168C00FAE462 /* Storyboards */,
-				09BEB80B18AE40BA00FAE462 /* Libraries */,
 				09BEB80C18AE413A00FAE462 /* Scripts */,
 				E73495FC1ACDF37A006FB7FB /* Bootstrap */,
 				09BEB80018AE16B100FAE462 /* Supporting Files */,
@@ -222,13 +221,6 @@
 				09BEB80518AE16B100FAE462 /* main.m */,
 			);
 			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		09BEB80B18AE40BA00FAE462 /* Libraries */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Libraries;
 			sourceTree = "<group>";
 		};
 		09BEB80C18AE413A00FAE462 /* Scripts */ = {

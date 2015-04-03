@@ -21,8 +21,6 @@
 #pragma mark -
 @interface APIManager (Date)
 
-- (AFHTTPRequestOperation *)getCurrentDateWithParams:(NSDictionary *)params
-                                          completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject))completion
-                                              failed:(void (^)(AFHTTPRequestOperation *operation, NSError *error, BOOL isCancelled))failed;
+- (AFHTTPRequestOperation *)getCurrentDateWithParams:(NSDictionary *)params completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject))completion failed:(void (^)(AFHTTPRequestOperation *operation, NSError *error, BOOL isCancelled))failed;
 
 @end

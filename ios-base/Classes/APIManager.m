@@ -14,10 +14,10 @@ static APIManager *sharedInstance = nil;
 
 + (instancetype)sharedManager
 {
-    @synchronized(sharedInstance)
-    {
-        if (!sharedInstance)
-        {
+    @synchronized(sharedInstance) {
+        
+        if (!sharedInstance) {
+            
             sharedInstance = [self new];
         }
     }
@@ -29,8 +29,7 @@ static APIManager *sharedInstance = nil;
     static dispatch_once_t onceTokenAPIManager;
     dispatch_once(&onceTokenAPIManager, ^{
         sharedInstance = [super init];
-        if (sharedInstance)
-        {
+        if (sharedInstance) {
             //initialization
         }
     });
@@ -38,16 +37,17 @@ static APIManager *sharedInstance = nil;
     return sharedInstance;
 }
 
-- (AFHTTPRequestOperationManager *)operationManager
-{
-    if (!_operationManager)
-    {
-        NSURL *baseURL  = [NSURL URLWithString:kBaseURL];
-        AFHTTPRequestOperationManager *operationManager        = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:baseURL];
-        operationManager.requestSerializer                     = [AFJSONRequestSerializer serializerWithWritingOptions:NSJSONWritingPrettyPrinted];
-        operationManager.responseSerializer                    = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
+- (AFHTTPRequestOperationManager *)operationManager {
+    
+    if (!_operationManager) {
         
-        _operationManager                                      = operationManager;
+        NSURL *baseURL  = [NSURL URLWithString:kBaseURL];
+        AFHTTPRequestOperationManager *operationManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:baseURL];
+        
+        operationManager.requestSerializer      = [AFJSONRequestSerializer serializerWithWritingOptions:NSJSONWritingPrettyPrinted];
+        operationManager.responseSerializer     = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
+        
+        _operationManager = operationManager;
     }
     return _operationManager;
 }
@@ -58,18 +58,12 @@ static APIManager *sharedInstance = nil;
 #pragma mark -
 @implementation APIManager (Date)
 
-- (AFHTTPRequestOperation *)getCurrentDateWithParams:(NSDictionary *)params
-                                          completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject))completion
-                                              failed:(void (^)(AFHTTPRequestOperation *operation, NSError *error, BOOL isCancelled))failed
-{
+- (AFHTTPRequestOperation *)getCurrentDateWithParams:(NSDictionary *)params completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject))completion failed:(void (^)(AFHTTPRequestOperation *operation, NSError *error, BOOL isCancelled))failed {
+    
 #if API_TEST_CURRENT_DATE
-    NSURL *bootstrapURL =
-    [[NSBundle mainBundle] URLForResource:@"date"
-                            withExtension:@"json"];
+    NSURL *bootstrapURL = [[NSBundle mainBundle] URLForResource:@"date" withExtension:@"json"];
     NSData *data        = [[NSData alloc] initWithContentsOfURL:bootstrapURL];
-    id responseObject = [NSJSONSerialization JSONObjectWithData:data
-                                                        options:NSJSONReadingAllowFragments
-                                                          error:nil];
+    id responseObject   = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
     BLOCK_SAFE_RUN(completion, nil, responseObject);
     
     return nil;
@@ -80,17 +74,16 @@ static APIManager *sharedInstance = nil;
                       parameters:params
                          success:completion
                          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                             if (operation.isCancelled)
-                             {
+                             
+                             if (operation.isCancelled) {
+                                 
                                  dispatch_async(dispatch_get_main_queue(), ^{
                                      BLOCK_SAFE_RUN(failed, operation, nil, YES);
                                  });
-                             }
-                             else
-                             {
+                             } else {
+                                 
                                  NSString *errorDescription = nil;
-                                 switch (operation.response.statusCode)
-                                 {
+                                 switch (operation.response.statusCode) {
                                      case 422:
                                      {
                                          errorDescription           = @"Missing parameters";
