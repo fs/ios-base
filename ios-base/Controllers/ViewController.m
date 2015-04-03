@@ -1,41 +1,52 @@
 //
 //  ViewController.m
-//  ios-base
-//
-//  Created by Danis Ziganshin on 14.02.14.
-//  Copyright (c) 2014 FlatStack. All rights reserved.
 //
 
 #import "ViewController.h"
-#import "APIManager.h"
-#import <BlocksKit+UIKit.h>
+#import "FSDate.h"
 
 @interface ViewController ()
+
+@property (nonatomic, weak) IBOutlet UILabel *labelView;
+
+@property (nonatomic, weak) AFHTTPRequestOperation *currentRequest;
 
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    [[APIManager sharedManager] getCurrentDateWithCompleteBlock:^(id object) {
-        NSDate *currentDate = (NSDate *)object;
-        NSString *dateString = [currentDate formattedTime];
-        [UIAlertView bk_showAlertViewWithTitle:@"current date" message:dateString cancelButtonTitle:@"OK" otherButtonTitles:nil handler:nil];
-    }];
+- (IBAction)updateDate:(id)sender {
     
-    dispatch_after_short(0.2, ^{
-        NSLog(@"Hello world");
-    });
+    __weak typeof(self) wself   = self;
     
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    self.labelView.text    = NSLocalizedString(@"PLEASE_WAIT", nil);
+    
+    if (self.currentRequest) {
+        [self.currentRequest cancel];
+    }
+    
+    self.currentRequest     =
+    [FSDate API_getCurrentDateWithCompletion:^(AFHTTPRequestOperation *operation, FSDate *date) {
+         if (wself) {
+             typeof(self) sself      = wself;
+             sself.labelView.text    = [date formattedString];
+         }
+     } failed:^(AFHTTPRequestOperation *operation, NSError *error, BOOL isCancelled) {
+         if (wself) {
+             typeof(self) sself      = wself;
+             
+             if (sself.currentRequest == operation) {
+                 
+                 NSString *text          = nil;
+                 if (isCancelled) {
+                     text                = NSLocalizedString(@"CANCELLED", nil);
+                 } else {
+                     text                = [error localizedDescription];
+                 }
+                 sself.labelView.text    = text;
+             }
+         }
+     }];
 }
 
 @end

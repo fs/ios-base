@@ -125,7 +125,7 @@ sh ios-base/Scripts/oclint.sh
 
 ## Credits
 
-Rails Base is maintained by [Nikita Fomin](http://github.com/nikitafomin).
+iOS Base is maintained by [Nikita Fomin](http://github.com/nikitafomin), [Sergey Nikolaev](https://github.com/NikolaevSergey) and [Vladimir Goncharov](https://github.com/VladimirGoncharov).
 It was written by [Flatstack](http://www.flatstack.com) with the help of our
 [contributors](http://github.com/fs/ios-base/contributors).
 

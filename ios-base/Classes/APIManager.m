@@ -1,43 +1,107 @@
 //
 //  APIManager.m
-//  ios-base
-//
-//  Created by Danis Ziganshin on 14.02.14.
-//  Copyright (c) 2014 FlatStack. All rights reserved.
 //
 
 #import "APIManager.h"
-#import "AFNetworking.h"
+#import "ErrorHandler.h"
 
-#warning checkout code and remove API_KEY and rename BASE_URL for staging and production
-//Get info about this API on http://timezonedb.com/api
-#define BASE_URL [[[NSBundle mainBundle] bundleIdentifier] hasSuffix:@"staging"] ? @"http://staging/" : @"http://api.timezonedb.com/"
-#define API_KEY @"PF85Q4OP7VRG"
+static APIManager *sharedInstance = nil;
 
+#pragma mark -
 @implementation APIManager
 
-+ (APIManager*)sharedManager {
-    static dispatch_once_t once;
-    static id sharedInstance;
-    dispatch_once(&once, ^{
-        sharedInstance = [[self alloc] init];
-    });
+@synthesize operationManager = _operationManager;
+
++ (instancetype)sharedManager
+{
+    @synchronized(sharedInstance) {
+        
+        if (!sharedInstance) {
+            
+            sharedInstance = [self new];
+        }
+    }
     return sharedInstance;
 }
 
-- (void)getCurrentDateWithCompleteBlock:(ObjectCallback)block {
-    NSString *fullURL = [NSString stringWithFormat:@"%@",BASE_URL];
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    NSDictionary *params = @{ @"zone": @"Europe/Moscow",
-                              @"key": API_KEY,
-                              @"format": @"json" };
-    [manager GET:fullURL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSTimeInterval timeInterval = [[responseObject objectForKeyOrNil:@"timestamp"] doubleValue];
-        NSDate *date = [NSDate dateWithTimeIntervalSince1970:timeInterval];
-        BLOCK_SAFE_RUN(block, date);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        BLOCK_SAFE_RUN(block, NO);
-    }];
+- (id)init
+{
+    static dispatch_once_t onceTokenAPIManager;
+    dispatch_once(&onceTokenAPIManager, ^{
+        sharedInstance = [super init];
+        if (sharedInstance) {
+            //initialization
+        }
+    });
+    
+    return sharedInstance;
+}
+
+#pragma mark - Date
+- (AFHTTPRequestOperationManager *)operationManager {
+    
+    if (!_operationManager) {
+        
+        NSURL *baseURL  = [NSURL URLWithString:kBaseURL];
+        AFHTTPRequestOperationManager *operationManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:baseURL];
+        
+        operationManager.requestSerializer      = [AFJSONRequestSerializer serializerWithWritingOptions:NSJSONWritingPrettyPrinted];
+        operationManager.responseSerializer     = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
+        
+        _operationManager = operationManager;
+    }
+    return _operationManager;
+}
+
+- (AFHTTPRequestOperation *)getCurrentDateWithParams:(NSDictionary *)params completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject))completion failed:(void (^)(AFHTTPRequestOperation *operation, NSError *error, BOOL isCancelled))failed {
+    
+#if API_TEST_CURRENT_DATE
+    NSURL *bootstrapURL = [[NSBundle mainBundle] URLForResource:@"date" withExtension:@"json"];
+    NSData *data        = [[NSData alloc] initWithContentsOfURL:bootstrapURL];
+    id responseObject   = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+    BLOCK_SAFE_RUN(completion, nil, responseObject);
+    
+    return nil;
+    
+#else
+    AFHTTPRequestOperation *operation =
+    [[self operationManager] GET:@""
+                      parameters:params
+                         success:completion
+                         failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                             
+                             if (operation.isCancelled) {
+                                 
+                                 dispatch_async(dispatch_get_main_queue(), ^{
+                                     BLOCK_SAFE_RUN(failed, operation, nil, YES);
+                                 });
+                             } else {
+                                 
+                                 NSString *errorDescription = nil;
+                                 switch (operation.response.statusCode) {
+                                     case 422:
+                                     {
+                                         errorDescription           = @"Missing parameters";
+                                     }; break;
+                                         
+                                     default:
+                                     {
+                                         ErrorHandler *errorHandler =
+                                         [[ErrorHandler alloc] initFromFailureRequestOperation:operation];
+                                         errorDescription           = [errorHandler errorString];
+                                     }; break;
+                                 }
+                                 
+                                 dispatch_async(dispatch_get_main_queue(), ^{
+                                     BLOCK_SAFE_RUN(failed, operation, [error errorByLocalizedDescription:errorDescription], NO);
+                                 });
+                             }
+                         }];
+    return operation;
+#endif
 }
 
 @end
+
+
+

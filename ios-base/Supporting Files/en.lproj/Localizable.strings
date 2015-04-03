@@ -1,0 +1,49 @@
+/* STANDART */
+"OK"                = "OK";
+"CANCEL"            = "Cancel";
+"CANCELLED"         = "Cancelled";
+
+"YES"               = "Yes";
+"NO"                = "No";
+
+"DONE"              = "Done";
+"EDIT"              = "Edit";
+"ADD"               = "Add";
+"SAVE"              = "Save";
+
+"ERROR"             = "Error";
+"SEND"              = "Send";
+"RELOAD"            = "Reload";
+
+"ABOUT"             = "About";
+"REVIEW"            = "Review";
+
+"DELETE"            = "Delete";
+"UPDATE"            = "Update";
+"RESET"             = "Reset";
+"SUCCES_UPDATE"     = "Data updated successfully";
+"FAILED_UPDATE"     = "Failed to update data";
+
+"WARNING"           = "Warning";
+"PLEASE_WAIT"       = "Please wait...";
+"CONGRATULATIONS"   = "Congratulations!";
+
+"LOGOUT"            = "Log out";
+
+"UNKNOWN"           = "Unknown";
+"NONE"              = "None";
+
+/* INTERNET ERROR MESSAGES */
+"NO_INTERNET_CONNECTION"                    = "No Internet connection. Please check your settings.";
+"SERVER_NOT_RESPOND"                        = "Sorry but server is unavailable.";
+"USER_NOT_AUTHORIZED"                       = "You are not authorized. Try to login again later.";
+"SERVER_ERROR"                              = "An error occurred on the server. Please try again later.";
+"UNKNOWN_ERROR"                             = "Please contact with the developers for solve this problem";
+
+"USER_MISSING"                              = "Unfortunately this account wasn't found. Try to register again or contact the developers to solve this problem.";
+"USER_EXIST"                                = "Sorry, but this account already exist";
+"INVALID_EMAIL"                             = "Please enter a valid e-mail address";
+"INVALID_LOGIN"                             = "E-mail or password is incorrect";
+
+
+
