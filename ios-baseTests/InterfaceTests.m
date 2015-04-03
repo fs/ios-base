@@ -34,7 +34,7 @@
 
 - (void)testButtonClick {
 #warning Simple UI test
-    [tester tapViewWithAccessibilityLabel:@"OK"];
+    [tester tapViewWithAccessibilityLabel:@"Check it!"];
 }
 
 @end

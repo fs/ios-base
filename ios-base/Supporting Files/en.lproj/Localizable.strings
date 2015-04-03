@@ -9,6 +9,7 @@
 /* STANDART */
 "OK"                = "OK";
 "CANCEL"            = "Cancel";
+"CANCELLED"         = "Cancelled";
 
 "YES"               = "Yes";
 "NO"                = "No";

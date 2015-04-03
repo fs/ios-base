@@ -9,41 +9,53 @@
 
 @property (nonatomic, weak) IBOutlet UILabel *labelView;
 
+@property (nonatomic, weak) AFHTTPRequestOperation *currentRequest;
+
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad
+- (IBAction)updateDate:(id)sender
 {
-    [super viewDidLoad];
-
     __weak typeof(self) wself   = self;
-    [FSDate API_getCurrentDateWithCompletion:^(AFHTTPRequestOperation *operation, FSDate *date)
+    
+    self.labelView.text    = NSLocalizedString(@"PLEASE_WAIT", nil);
+    
+    if (self.currentRequest)
     {
-        if (wself)
-        {
-            typeof(self) sself      = wself;
-            sself.labelView.text    = [date formattedString];
-        }
+        [self.currentRequest cancel];
     }
+    
+    self.currentRequest     =
+    [FSDate API_getCurrentDateWithCompletion:^(AFHTTPRequestOperation *operation, FSDate *date)
+     {
+         if (wself)
+         {
+             typeof(self) sself      = wself;
+             sself.labelView.text    = [date formattedString];
+         }
+     }
                                       failed:^(AFHTTPRequestOperation *operation, NSError *error, BOOL isCancelled)
-    {
-        if (wself)
-        {
-            typeof(self) sself      = wself;
-            
-            NSString *text          = nil;
-            if (isCancelled)
-            {
-                text                = @"Cancelled";
-            }
-            else
-            {
-                text                = [error localizedDescription];
-            }
-            sself.labelView.text    = text;
-        }
-    }];
+     {
+         if (wself)
+         {
+             typeof(self) sself      = wself;
+             
+             if (sself.currentRequest == operation)
+             {
+                 NSString *text          = nil;
+                 if (isCancelled)
+                 {
+                     text                = NSLocalizedString(@"CANCELLED", nil);
+                 }
+                 else
+                 {
+                     text                = [error localizedDescription];
+                 }
+                 sself.labelView.text    = text;
+             }
+         }
+     }];
 }
 
 @end

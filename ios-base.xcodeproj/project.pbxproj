@@ -31,6 +31,7 @@
 		E73495F71ACDEE0A006FB7FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E73495F51ACDEE0A006FB7FB /* Main.storyboard */; };
 		E73495FA1ACDEE5F006FB7FB /* ErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E73495F91ACDEE5F006FB7FB /* ErrorHandler.m */; };
 		E73495FE1ACDF3A1006FB7FB /* date.json in Resources */ = {isa = PBXBuildFile; fileRef = E73495FD1ACDF3A1006FB7FB /* date.json */; };
+		E7569F271ACE73560023C8C1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7569F251ACE73560023C8C1 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		E73495F91ACDEE5F006FB7FB /* ErrorHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorHandler.m; sourceTree = "<group>"; };
 		E73495FB1ACDEE74006FB7FB /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		E73495FD1ACDF3A1006FB7FB /* date.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = date.json; sourceTree = "<group>"; };
+		E7569F261ACE73560023C8C1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F51B39E6D6CE350DF5DEF800 /* Pods.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods.debug staging.xcconfig"; path = "Pods/Target Support Files/Pods/Pods.debug staging.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -213,6 +215,7 @@
 		09BEB80018AE16B100FAE462 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E7569F251ACE73560023C8C1 /* Localizable.strings */,
 				09BEB80118AE16B100FAE462 /* InfoPlist.strings */,
 				09BEB80318AE16B100FAE462 /* ios-base-Info.plist */,
 				09BEB80418AE16B100FAE462 /* ios-base-Prefix.pch */,
@@ -384,6 +387,7 @@
 				E73495F71ACDEE0A006FB7FB /* Main.storyboard in Resources */,
 				E73495FE1ACDF3A1006FB7FB /* date.json in Resources */,
 				09BEB7D018AE0AE200FAE462 /* Images.xcassets in Resources */,
+				E7569F271ACE73560023C8C1 /* Localizable.strings in Resources */,
 				09BEB80F18AE413A00FAE462 /* mogen.sh in Resources */,
 				09BEB80618AE16B100FAE462 /* InfoPlist.strings in Resources */,
 				09BEB81018AE413A00FAE462 /* mogend.sh in Resources */,
@@ -533,6 +537,14 @@
 				E73495F61ACDEE0A006FB7FB /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E7569F251ACE73560023C8C1 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E7569F261ACE73560023C8C1 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
