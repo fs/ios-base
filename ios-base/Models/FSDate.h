@@ -18,11 +18,7 @@
 
 - (NSString *)formattedString;
 
-@end
-
-
-#pragma mark -
-@interface FSDate (API)
+#pragma mark - API
 
 + (AFHTTPRequestOperation *)API_getCurrentDateWithCompletion:(void (^)(AFHTTPRequestOperation *operation, FSDate *date))completion failed:(void (^)(AFHTTPRequestOperation *operation, NSError *error, BOOL isCancelled))failed;
 
