@@ -37,6 +37,7 @@ static APIManager *sharedInstance = nil;
     return sharedInstance;
 }
 
+#pragma mark - Date
 - (AFHTTPRequestOperationManager *)operationManager {
     
     if (!_operationManager) {
@@ -51,12 +52,6 @@ static APIManager *sharedInstance = nil;
     }
     return _operationManager;
 }
-
-@end
-
-
-#pragma mark -
-@implementation APIManager (Date)
 
 - (AFHTTPRequestOperation *)getCurrentDateWithParams:(NSDictionary *)params completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject))completion failed:(void (^)(AFHTTPRequestOperation *operation, NSError *error, BOOL isCancelled))failed {
     
@@ -107,3 +102,6 @@ static APIManager *sharedInstance = nil;
 }
 
 @end
+
+
+

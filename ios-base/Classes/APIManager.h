@@ -15,12 +15,8 @@
 
 @property (nonatomic, strong, readonly) AFHTTPRequestOperationManager *operationManager;
 
-@end
-
-
-#pragma mark -
-@interface APIManager (Date)
-
+#pragma mark - Date
 - (AFHTTPRequestOperation *)getCurrentDateWithParams:(NSDictionary *)params completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject))completion failed:(void (^)(AFHTTPRequestOperation *operation, NSError *error, BOOL isCancelled))failed;
 
 @end
+
