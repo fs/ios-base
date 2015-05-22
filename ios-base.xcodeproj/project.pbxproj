@@ -23,6 +23,7 @@
 		09BEB80F18AE413A00FAE462 /* mogen.sh in Resources */ = {isa = PBXBuildFile; fileRef = 09BEB80D18AE413A00FAE462 /* mogen.sh */; };
 		09BEB81018AE413A00FAE462 /* mogend.sh in Resources */ = {isa = PBXBuildFile; fileRef = 09BEB80E18AE413A00FAE462 /* mogend.sh */; };
 		09BEB85218AE581E00FAE462 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 09BEB85118AE581E00FAE462 /* APIManager.m */; };
+		197DA19C1B0F82800059A3F1 /* date.json in Resources */ = {isa = PBXBuildFile; fileRef = 197DA19B1B0F82800059A3F1 /* date.json */; };
 		19F97F321AAE419C006A3661 /* InterfaceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F97F311AAE419C006A3661 /* InterfaceTests.m */; };
 		5033513B33B94ACD8F86C986 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F1BBFDB84E42628D46543E /* libPods.a */; };
 		D2CF82CF8CEDD6D61D368176 /* libPods-ios-baseTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7811AEA0EBA721F40B9DE400 /* libPods-ios-baseTests.a */; };
@@ -30,7 +31,6 @@
 		E73495F41ACDEDFC006FB7FB /* FSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E73495F21ACDEDFC006FB7FB /* FSObject.m */; };
 		E73495F71ACDEE0A006FB7FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E73495F51ACDEE0A006FB7FB /* Main.storyboard */; };
 		E73495FA1ACDEE5F006FB7FB /* ErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E73495F91ACDEE5F006FB7FB /* ErrorHandler.m */; };
-		E73495FE1ACDF3A1006FB7FB /* date.json in Resources */ = {isa = PBXBuildFile; fileRef = E73495FD1ACDF3A1006FB7FB /* date.json */; };
 		E7569F271ACE73560023C8C1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7569F251ACE73560023C8C1 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +74,7 @@
 		191763D11992BD81001DBDB3 /* remove-key.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = "remove-key.sh"; path = "Scripts/remove-key.sh"; sourceTree = "<group>"; };
 		191763D21992BFAF001DBDB3 /* update-bundle.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = "update-bundle.sh"; path = "Scripts/update-bundle.sh"; sourceTree = "<group>"; };
 		191D14A01960A18900BA9D87 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = SOURCE_ROOT; };
+		197DA19B1B0F82800059A3F1 /* date.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = date.json; sourceTree = "<group>"; };
 		19A1152F19BB7E6C002F6F5A /* oclint.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = oclint.sh; path = Scripts/oclint.sh; sourceTree = "<group>"; };
 		19B99DC919A11E18003A71CA /* build.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = build.sh; path = Scripts/build.sh; sourceTree = "<group>"; };
 		19B99DCA19A11F51003A71CA /* test.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = test.sh; path = Scripts/test.sh; sourceTree = "<group>"; };
@@ -93,7 +94,6 @@
 		E73495F81ACDEE5F006FB7FB /* ErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorHandler.h; sourceTree = "<group>"; };
 		E73495F91ACDEE5F006FB7FB /* ErrorHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorHandler.m; sourceTree = "<group>"; };
 		E73495FB1ACDEE74006FB7FB /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		E73495FD1ACDF3A1006FB7FB /* date.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = date.json; sourceTree = "<group>"; };
 		E7569F261ACE73560023C8C1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F51B39E6D6CE350DF5DEF800 /* Pods.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods.debug staging.xcconfig"; path = "Pods/Target Support Files/Pods/Pods.debug staging.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -169,7 +169,7 @@
 				09BEB7F518AE167C00FAE462 /* Controllers */,
 				09BEB7F918AE168C00FAE462 /* Storyboards */,
 				09BEB80C18AE413A00FAE462 /* Scripts */,
-				E73495FC1ACDF37A006FB7FB /* Bootstrap */,
+				197DA19A1B0F82800059A3F1 /* Bootstrap */,
 				09BEB80018AE16B100FAE462 /* Supporting Files */,
 			);
 			path = "ios-base";
@@ -255,6 +255,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		197DA19A1B0F82800059A3F1 /* Bootstrap */ = {
+			isa = PBXGroup;
+			children = (
+				197DA19B1B0F82800059A3F1 /* date.json */,
+			);
+			path = Bootstrap;
+			sourceTree = "<group>";
+		};
 		199628CB199160A300351BCB /* Travis CI */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,15 +292,6 @@
 				0E7FB9CAC8C85742D1D8B0F9 /* Pods-ios-baseTests.release staging.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		E73495FC1ACDF37A006FB7FB /* Bootstrap */ = {
-			isa = PBXGroup;
-			children = (
-				E73495FD1ACDF3A1006FB7FB /* date.json */,
-			);
-			name = Bootstrap;
-			path = Scripts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,11 +376,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E73495F71ACDEE0A006FB7FB /* Main.storyboard in Resources */,
-				E73495FE1ACDF3A1006FB7FB /* date.json in Resources */,
 				09BEB7D018AE0AE200FAE462 /* Images.xcassets in Resources */,
 				E7569F271ACE73560023C8C1 /* Localizable.strings in Resources */,
 				09BEB80F18AE413A00FAE462 /* mogen.sh in Resources */,
 				09BEB80618AE16B100FAE462 /* InfoPlist.strings in Resources */,
+				197DA19C1B0F82800059A3F1 /* date.json in Resources */,
 				09BEB81018AE413A00FAE462 /* mogend.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
