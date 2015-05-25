@@ -18,7 +18,6 @@ before_script:
     - ./ios-base/scripts/update-bundle.sh
 
 script:
-    - ./ios-base/scripts/oclint.sh
     - ./ios-base/scripts/build.sh
     - ./ios-base/scripts/test.sh
 
@@ -37,6 +36,8 @@ env:
         - secure: egtKelo36nDNjEeq4hZYLKeNJ1U46M5872pl2cGmp3ASIgJgra47tUme8QSxZAVVguJ5Bt2kpjWx0/uAJMgAl1b4hHCsB6pdwHvdBmBgo/aQh7jT4fz21u/Gt5dzH3AoZgoPIDy5aNPj2ITM/TzE8u6N6FupXmWYXAgCD4jQQjc=
         - secure: U1ntj8+gf3PKMWkAhMWYIb+IZgVD4fTlpes/0pWSwge8B5g79PW/AuRIMHkJ8xWEUOCOl35k/G6czlIXQBmj11/7jWj4Zjr9x3y40N0eRra2VGxGhGcFTnCK51djxE/Rdcf6pDtaC1KC98347MYz9IVQf7lEWMfWLlvcAsfjb5Y=
         - secure: hNe0T9oVCE4oN68MBJPouwi2PQf9RqengIKvj6bYvj7f0JZUnSOifZQAn48/k5sR8hiSad5hLhSpOgJbK1EqVycruuR++1SBM97gsWXnxiXwP9Ec+a1OvZmlxlNwaoj5Vrd9QB6kATOa/xSzu1/shPShJxYZlwsFXkgJaMh7pFw=
+        - secure: ghLNvvELk1+Gwxc3piK/lRHc9v5Ust1lzmgXH1wafMXTurbKMk1Mb7tC/U2hJ6CoQ+2g0Y3hElTSdFiEw7LlC7dtEn+pTMIcuts7mO9MXVtltI5vIkvBTMxKrAOeHqzXcwok1j4rparL5uGIySQU7xYj2hJIu9ynj8ZZsq9jCHU=
+        - secure: iUTA+jwzwugrl8PsLUyA7l5+OUn97PF3mVAcT8/h11AhWrgR88m/RpqGY0AUQeC3pXc4FuNKB7Thx5TA1K80GvkmgQ3LOFlFIJyhXCRZqhj65eYK+oQhDd+NRTGZ0CW5K2X+7e12LyAkJnCMYVEuGeqFLVpPsMi9jDF+Cbf7k8A=
 
 branches:
     only:

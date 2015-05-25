@@ -24,6 +24,8 @@
 		09BEB81018AE413A00FAE462 /* mogend.sh in Resources */ = {isa = PBXBuildFile; fileRef = 09BEB80E18AE413A00FAE462 /* mogend.sh */; };
 		09BEB85218AE581E00FAE462 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 09BEB85118AE581E00FAE462 /* APIManager.m */; };
 		197DA19C1B0F82800059A3F1 /* date.json in Resources */ = {isa = PBXBuildFile; fileRef = 197DA19B1B0F82800059A3F1 /* date.json */; };
+		19D6B7181B13355D009730AD /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19D6B7161B13355D009730AD /* Fabric.framework */; };
+		19D6B7191B13355D009730AD /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19D6B7171B13355D009730AD /* Crashlytics.framework */; };
 		19F97F321AAE419C006A3661 /* InterfaceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F97F311AAE419C006A3661 /* InterfaceTests.m */; };
 		5033513B33B94ACD8F86C986 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F1BBFDB84E42628D46543E /* libPods.a */; };
 		D2CF82CF8CEDD6D61D368176 /* libPods-ios-baseTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7811AEA0EBA721F40B9DE400 /* libPods-ios-baseTests.a */; };
@@ -78,6 +80,8 @@
 		19A1152F19BB7E6C002F6F5A /* oclint.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = oclint.sh; path = Scripts/oclint.sh; sourceTree = "<group>"; };
 		19B99DC919A11E18003A71CA /* build.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = build.sh; path = Scripts/build.sh; sourceTree = "<group>"; };
 		19B99DCA19A11F51003A71CA /* test.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = test.sh; path = Scripts/test.sh; sourceTree = "<group>"; };
+		19D6B7161B13355D009730AD /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		19D6B7171B13355D009730AD /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		19F97F311AAE419C006A3661 /* InterfaceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterfaceTests.m; sourceTree = "<group>"; };
 		3E551A38583C16241E5A22D9 /* Pods.release staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods.release staging.xcconfig"; path = "Pods/Target Support Files/Pods/Pods.release staging.xcconfig"; sourceTree = "<group>"; };
 		7811AEA0EBA721F40B9DE400 /* libPods-ios-baseTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ios-baseTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,8 +108,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				09BEB7B718AE0AE200FAE462 /* CoreGraphics.framework in Frameworks */,
+				19D6B7181B13355D009730AD /* Fabric.framework in Frameworks */,
 				09BEB7B918AE0AE200FAE462 /* UIKit.framework in Frameworks */,
 				09BEB7B518AE0AE200FAE462 /* Foundation.framework in Frameworks */,
+				19D6B7191B13355D009730AD /* Crashlytics.framework in Frameworks */,
 				5033513B33B94ACD8F86C986 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,6 +153,8 @@
 		09BEB7B318AE0AE200FAE462 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				19D6B7161B13355D009730AD /* Fabric.framework */,
+				19D6B7171B13355D009730AD /* Crashlytics.framework */,
 				09BEB7B418AE0AE200FAE462 /* Foundation.framework */,
 				09BEB7B618AE0AE200FAE462 /* CoreGraphics.framework */,
 				09BEB7B818AE0AE200FAE462 /* UIKit.framework */,
@@ -307,6 +315,7 @@
 				09BEB7AF18AE0AE200FAE462 /* Resources */,
 				8E42A464926A47479CF0A31A /* Copy Pods Resources */,
 				09BEB85A18AE651700FAE462 /* ShellScript */,
+				19D6B7151B133535009730AD /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -423,6 +432,19 @@
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
+		};
+		19D6B7151B133535009730AD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
 		};
 		4FFC752A78ECBE78755BEFF2 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -627,6 +649,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ios-base/Supporting Files/ios-base-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/ios-base/Supporting Files/ios-base-Info.plist";
@@ -643,6 +669,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ios-base/Supporting Files/ios-base-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/ios-base/Supporting Files/ios-base-Info.plist";
@@ -743,6 +773,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Staging";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ios-base/Supporting Files/ios-base-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/ios-base/Supporting Files/ios-base-Info.plist";
@@ -819,6 +853,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ios-base/Supporting Files/ios-base-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/ios-base/Supporting Files/ios-base-Info.plist";
