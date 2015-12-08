@@ -88,7 +88,7 @@ pod install
 * Configure CoreData and Mogenerator scripts in
 
 ```sh
-/ios-base/Scripts 
+/ios-base/Scripts
 ```
 
 ### Configure Crashlytics
@@ -112,13 +112,13 @@ The project includes several useful scripts. For example [build.sh](https://gith
 
 Before push changes to GitHub you can check your project. You can build project, run tests or check code from terminale. To run one of scripts enter in terminale this lines:
 ```sh
-sh ios-base/Scripts/build.sh 
+sh ios-base/Scripts/build.sh
 ```
 ```sh
-sh ios-base/Scripts/test.sh 
+sh ios-base/Scripts/test.sh
 ```
 ```sh
-sh ios-base/Scripts/oclint.sh 
+sh ios-base/Scripts/oclint.sh
 ```
 
 **WARNING!!!** These scripts used by Travis-CI so you should not change them!
@@ -129,5 +129,4 @@ iOS Base is maintained by [Nikita Fomin](http://github.com/nikitafomin), [Sergey
 It was written by [Flatstack](http://www.flatstack.com) with the help of our
 [contributors](http://github.com/fs/ios-base/contributors).
 
-
-[![Flatstack](https://avatars0.githubusercontent.com/u/15136?v=2&s=200)](http://www.flatstack.com)
+[<img src="http://www.flatstack.com/logo.svg" width="100"/>](http://www.flatstack.com)
