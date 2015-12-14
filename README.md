@@ -122,6 +122,9 @@ sh ios-base/Scripts/oclint.sh
 ```
 
 **WARNING!!!** These scripts used by Travis-CI so you should not change them!
+ 
+## License
+**ios-base** is released under the MIT license. See [LICENSE](LICENSE) for details.
 
 ## Credits
 
