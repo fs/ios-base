@@ -3,6 +3,8 @@
 //
 
 #import "AppDelegate.h"
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 
 @implementation AppDelegate
 
@@ -11,6 +13,9 @@
     //setting AFNetwork
     [[AFNetworkReachabilityManager sharedManager] startMonitoring];
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
+    
+    // Crashlytics
+    [Fabric with:@[CrashlyticsKit]];
     
     // Override point for customization after application launch.
     return YES;
